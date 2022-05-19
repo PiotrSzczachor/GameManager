@@ -40,25 +40,27 @@
             this.EmailLabel = new System.Windows.Forms.Label();
             this.RoleLabel = new System.Windows.Forms.Label();
             this.CheckingChangesTimer = new System.Windows.Forms.Timer(this.components);
+            this.RedirectTimer = new System.Windows.Forms.Timer(this.components);
+            this.time = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UsernameBox
             // 
-            this.UsernameBox.Location = new System.Drawing.Point(102, 47);
+            this.UsernameBox.Location = new System.Drawing.Point(132, 45);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(164, 20);
             this.UsernameBox.TabIndex = 0;
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(102, 73);
+            this.PasswordBox.Location = new System.Drawing.Point(132, 71);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(164, 20);
             this.PasswordBox.TabIndex = 1;
             // 
             // EmailBox
             // 
-            this.EmailBox.Location = new System.Drawing.Point(102, 99);
+            this.EmailBox.Location = new System.Drawing.Point(132, 97);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(164, 20);
             this.EmailBox.TabIndex = 2;
@@ -66,14 +68,14 @@
             // RolesComboBox
             // 
             this.RolesComboBox.FormattingEnabled = true;
-            this.RolesComboBox.Location = new System.Drawing.Point(102, 125);
+            this.RolesComboBox.Location = new System.Drawing.Point(132, 123);
             this.RolesComboBox.Name = "RolesComboBox";
             this.RolesComboBox.Size = new System.Drawing.Size(164, 21);
             this.RolesComboBox.TabIndex = 3;
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(33, 163);
+            this.BackButton.Location = new System.Drawing.Point(63, 161);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(108, 27);
             this.BackButton.TabIndex = 4;
@@ -83,7 +85,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(158, 163);
+            this.SaveButton.Location = new System.Drawing.Point(188, 161);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(108, 27);
             this.SaveButton.TabIndex = 5;
@@ -95,7 +97,7 @@
             // 
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.UsernameLabel.Location = new System.Drawing.Point(26, 48);
+            this.UsernameLabel.Location = new System.Drawing.Point(56, 46);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(68, 15);
             this.UsernameLabel.TabIndex = 6;
@@ -105,7 +107,7 @@
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PasswordLabel.Location = new System.Drawing.Point(30, 78);
+            this.PasswordLabel.Location = new System.Drawing.Point(60, 76);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(64, 15);
             this.PasswordLabel.TabIndex = 7;
@@ -115,7 +117,7 @@
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EmailLabel.Location = new System.Drawing.Point(48, 104);
+            this.EmailLabel.Location = new System.Drawing.Point(78, 102);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(46, 15);
             this.EmailLabel.TabIndex = 8;
@@ -125,7 +127,7 @@
             // 
             this.RoleLabel.AutoSize = true;
             this.RoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.RoleLabel.Location = new System.Drawing.Point(58, 126);
+            this.RoleLabel.Location = new System.Drawing.Point(88, 124);
             this.RoleLabel.Name = "RoleLabel";
             this.RoleLabel.Size = new System.Drawing.Size(36, 15);
             this.RoleLabel.TabIndex = 9;
@@ -135,11 +137,26 @@
             // 
             this.CheckingChangesTimer.Tick += new System.EventHandler(this.CheckingChangesTimer_Tick);
             // 
+            // RedirectTimer
+            // 
+            this.RedirectTimer.Interval = 1000;
+            // 
+            // time
+            // 
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(12, 9);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(13, 13);
+            this.time.TabIndex = 10;
+            this.time.Text = "5";
+            this.time.Visible = false;
+            // 
             // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 200);
+            this.ClientSize = new System.Drawing.Size(356, 200);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.RoleLabel);
             this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.PasswordLabel);
@@ -171,5 +188,7 @@
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label RoleLabel;
         private System.Windows.Forms.Timer CheckingChangesTimer;
+        private System.Windows.Forms.Timer RedirectTimer;
+        private System.Windows.Forms.Label time;
     }
 }

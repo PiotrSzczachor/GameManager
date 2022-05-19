@@ -55,19 +55,19 @@ namespace GameManager
             }
         }
 
-        bool checkIfUserExistInDb(string username, GameManagerContext db)
+    public bool checkIfUserExistInDb(string username, GameManagerContext db)
+    {
+        bool isAvaliable = true;
+        var usernames = from x in db.Users orderby x.Username select x.Username;
+        foreach (var user in usernames)
         {
-            bool isAvaliable = true;
-            var usernames = from x in db.Users orderby x.Username select x.Username;
-            foreach (var user in usernames)
-            {
-                if (username == user.ToString())
-                {
-                    isAvaliable = false;
-                }
-            }
-            return isAvaliable;
+             if (username == user.ToString())
+             {
+                 isAvaliable = false;
+             }
         }
+        return isAvaliable;
+    }
 
         
     public bool checkIfEmailIsValid(string source)

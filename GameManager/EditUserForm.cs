@@ -49,8 +49,7 @@ namespace GameManager
         private void SaveButton_Click(object sender, EventArgs e)
         {
             EditUserLogic editUserLogic = new EditUserLogic();
-            editUserLogic.editUserData(initUsername, UsernameBox.Text, PasswordBox.Text, EmailBox.Text, RolesComboBox.Text);
+            editUserLogic.editUserData(initUsername, UsernameBox.Text, PasswordBox.Text, EmailBox.Text, RolesComboBox.Text, CheckingChangesTimer, RedirectTimer, time, this, currentlyLoggedUser, SaveButton, BackButton);
         }
-        //Write something which will inform user about succesfully changed data
     }
 }

@@ -26,17 +26,76 @@ namespace GameManager
             };
         }
 
-        public void editUserData(string initUsername, string username, string password, string email, string roleName)
+        public void editUserData(string initUsername, string username, string password, string email, string roleName, Timer checkingChangesTimer,
+                                Timer RedirectTimer, Label time, EditUserForm form, Users user, Button SaveButton, Button backButton)
         {
+            SignUpLogic signUpLogic = new SignUpLogic();
             using (var db = new GameManagerContext())
             {
-                var dbUser = db.Users.SingleOrDefault(u => u.Username == initUsername);
-                var dbUserRole = db.Users.SingleOrDefault(u => u.Role.Name == roleName);
-                dbUser.Password = password;
-                dbUser.Email = email;
-                dbUser.Role = dbUserRole.Role;
-                dbUser.Username = username;
-                db.SaveChanges();
+                if (username != "" && password != "" && email != "" && roleName != "")
+                {
+                    bool isAvaliable = signUpLogic.checkIfUserExistInDb(username, db);
+                    bool isEmailValid = signUpLogic.checkIfEmailIsValid(email);
+                    bool youCanMakeChanges = true;
+                    if (!isAvaliable && username != initUsername)
+                    {
+                        youCanMakeChanges = false;
+                    }
+                    if (youCanMakeChanges)
+                    {
+                        if (isEmailValid)
+                        {
+                            var dbUser = db.Users.SingleOrDefault(u => u.Username == initUsername);
+                            var dbUserRole = db.Roles.SingleOrDefault(u => u.Name == roleName);
+                            dbUser.Password = password;
+                            dbUser.Email = email;
+                            dbUser.Role = dbUserRole;
+                            dbUser.Username = username;
+                            db.SaveChanges();
+                            checkingChangesTimer.Stop();
+                            SaveButton.Enabled = false;
+                            backButton.Enabled = false;
+                            RedirectTimer.Enabled = true;
+                            RedirectTimer.Start();
+                            time.Text = "";
+                            time.Visible = true;
+                            int seconds = 6;
+                            RedirectTimer.Tick += (s, e) =>
+                            {
+                                seconds--;
+                                time.Text = "User edited succesfully! You will be redirect to Users List in " + seconds.ToString() + " seconds";
+                                if (seconds == 0)
+                                {
+                                    form.Hide();
+                                    new UsersPanelForm(user).ShowDialog();
+                                    form.Close();
+                                }
+                            };
+                        } 
+                        else
+                        {
+                            MessageBox.Show("Email format is incorrect",
+                                    "Incorrect email format",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                        }
+
+                    } 
+                    else
+                    {
+                        MessageBox.Show("Username is not avaliable",
+                                    "Change Username",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                    }
+                } 
+                else
+                {
+                    MessageBox.Show("You need to fill all TextBoxes",
+                                    "Fill all TextBox",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
             }
         }
         public void checkIfUserDataChanged(string username, string password, string email, string role, TextBox UsernameBox,
