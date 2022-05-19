@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UsernameBox = new System.Windows.Forms.TextBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.EmailBox = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.RoleLabel = new System.Windows.Forms.Label();
+            this.CheckingChangesTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UsernameBox
@@ -87,6 +89,7 @@
             this.SaveButton.TabIndex = 5;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // UsernameLabel
             // 
@@ -128,6 +131,10 @@
             this.RoleLabel.TabIndex = 9;
             this.RoleLabel.Text = "Role:";
             // 
+            // CheckingChangesTimer
+            // 
+            this.CheckingChangesTimer.Tick += new System.EventHandler(this.CheckingChangesTimer_Tick);
+            // 
             // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,5 +170,6 @@
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label RoleLabel;
+        private System.Windows.Forms.Timer CheckingChangesTimer;
     }
 }
