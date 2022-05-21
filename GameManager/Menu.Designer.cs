@@ -44,6 +44,7 @@
             this.CategoriesButton.TabIndex = 0;
             this.CategoriesButton.Text = "Categories";
             this.CategoriesButton.UseVisualStyleBackColor = true;
+            this.CategoriesButton.Click += new System.EventHandler(this.CategoriesButton_Click);
             // 
             // ElementsButton
             // 

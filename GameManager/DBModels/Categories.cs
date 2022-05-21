@@ -7,13 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GameManager
 {
-    public class Forests
+    public class Categories
     {
         [Key]
         public int Id { get; set; }
-        public virtual Categories Category { get; set; }
-        public string forestName { get; set; }
-        public int forestArea { get; set; }
-        
+        [Required]
+        public string Name { get; set; }
     }
 }

@@ -78,7 +78,9 @@ namespace GameManager
     public void addUserToDb(string username, string password, string email, GameManagerContext db, Button CancelButton, 
                             Button ResetButton, Button SignUpButton, Timer RedirectTimer, Label time, SignUpForm form, bool redirect)
         {
-            Users user = new Users { Username = username, Password = password, Email = email };
+            var roleQuery = from x in db.Roles where x.Name == "User" select x;
+            Roles role = roleQuery.FirstOrDefault();
+            Users user = new Users { Username = username, Password = password, Email = email, Role = role };
             db.Users.Add(user);
             db.SaveChanges();
             CancelButton.Enabled = false;

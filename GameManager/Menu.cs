@@ -41,5 +41,12 @@ namespace GameManager
             new UsersPanelForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
+
+        private void CategoriesButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new CategoriesManagerForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }

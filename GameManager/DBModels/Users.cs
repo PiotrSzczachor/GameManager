@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace GameManager
 {
-    public class Forests
+    public class Users
     {
         [Key]
         public int Id { get; set; }
-        public virtual Categories Category { get; set; }
-        public string forestName { get; set; }
-        public int forestArea { get; set; }
-        
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public virtual Roles  Role { get; set; }
     }
 }
