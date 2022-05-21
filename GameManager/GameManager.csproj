@@ -56,66 +56,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountInfoForm.cs">
+    <Compile Include="GUI\AccountInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountInfoForm.Designer.cs">
+    <Compile Include="GUI\AccountInfoForm.Designer.cs">
       <DependentUpon>AccountInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountInfoLogic.cs" />
-    <Compile Include="AddNewUserForm.cs">
+    <Compile Include="Logic\AccountInfoLogic.cs" />
+    <Compile Include="GUI\AddNewUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewUserForm.Designer.cs">
+    <Compile Include="GUI\AddNewUserForm.Designer.cs">
       <DependentUpon>AddNewUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alchemist.cs" />
-    <Compile Include="Archer.cs" />
-    <Compile Include="Bat.cs" />
-    <Compile Include="Castles.cs" />
-    <Compile Include="Categories.cs" />
-    <Compile Include="CategoriesManagerForm.cs">
+    <Compile Include="DBModels\Alchemist.cs" />
+    <Compile Include="DBModels\Archer.cs" />
+    <Compile Include="DBModels\Bat.cs" />
+    <Compile Include="DBModels\Castles.cs" />
+    <Compile Include="DBModels\Categories.cs" />
+    <Compile Include="GUI\CategoriesManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategoriesManagerForm.Designer.cs">
+    <Compile Include="GUI\CategoriesManagerForm.Designer.cs">
       <DependentUpon>CategoriesManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CategoriesManagerLogic.cs" />
-    <Compile Include="ChangePasswordForm.cs">
+    <Compile Include="Logic\CategoriesManagerLogic.cs" />
+    <Compile Include="GUI\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangePasswordForm.Designer.cs">
+    <Compile Include="GUI\ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangePasswordLogic.cs" />
-    <Compile Include="Cobra.cs" />
-    <Compile Include="Desert.cs" />
-    <Compile Include="Dragon.cs" />
-    <Compile Include="EditUserForm.cs">
+    <Compile Include="Logic\ChangePasswordLogic.cs" />
+    <Compile Include="DBModels\Cobra.cs" />
+    <Compile Include="DBModels\Desert.cs" />
+    <Compile Include="DBModels\Dragon.cs" />
+    <Compile Include="GUI\EditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUserForm.Designer.cs">
+    <Compile Include="GUI\EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditUserLogic.cs" />
-    <Compile Include="Ent.cs" />
+    <Compile Include="Logic\EditUserLogic.cs" />
+    <Compile Include="DBModels\Ent.cs" />
     <Compile Include="GameElement.cs" />
     <Compile Include="GameManagerContext.cs" />
-    <Compile Include="Caves.cs" />
-    <Compile Include="Forests.cs" />
-    <Compile Include="Golem.cs" />
-    <Compile Include="Knight.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="DBModels\Caves.cs" />
+    <Compile Include="DBModels\Forests.cs" />
+    <Compile Include="DBModels\Golem.cs" />
+    <Compile Include="DBModels\Knight.cs" />
+    <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginLogic.cs" />
-    <Compile Include="Menu.cs">
+    <Compile Include="Logic\LoginLogic.cs" />
+    <Compile Include="GUI\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="GUI\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202205131213166_InitialCreate.cs" />
@@ -139,51 +139,51 @@
       <DependentUpon>202205212018189_AddedCategoriesAndElements.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Mummy.cs" />
+    <Compile Include="DBModels\Mummy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roles.cs" />
-    <Compile Include="Scorpion.cs" />
-    <Compile Include="SignUpForm.cs">
+    <Compile Include="DBModels\Roles.cs" />
+    <Compile Include="DBModels\Scorpion.cs" />
+    <Compile Include="GUI\SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUpForm.Designer.cs">
+    <Compile Include="GUI\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignUpLogic.cs" />
-    <Compile Include="Spider.cs" />
-    <Compile Include="Temple.cs" />
-    <Compile Include="Users.cs" />
-    <Compile Include="UsersPanelForm.cs">
+    <Compile Include="Logic\SignUpLogic.cs" />
+    <Compile Include="DBModels\Spider.cs" />
+    <Compile Include="DBModels\Temple.cs" />
+    <Compile Include="DBModels\Users.cs" />
+    <Compile Include="GUI\UsersPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsersPanelForm.Designer.cs">
+    <Compile Include="GUI\UsersPanelForm.Designer.cs">
       <DependentUpon>UsersPanelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersPanelLogic.cs" />
-    <Compile Include="Warrior.cs" />
-    <Compile Include="Warewolf.cs" />
-    <Compile Include="Witch.cs" />
-    <Compile Include="Wizzard.cs" />
-    <EmbeddedResource Include="AccountInfoForm.resx">
+    <Compile Include="Logic\UsersPanelLogic.cs" />
+    <Compile Include="DBModels\Warrior.cs" />
+    <Compile Include="DBModels\Warewolf.cs" />
+    <Compile Include="DBModels\Witch.cs" />
+    <Compile Include="DBModels\Wizzard.cs" />
+    <EmbeddedResource Include="GUI\AccountInfoForm.resx">
       <DependentUpon>AccountInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddNewUserForm.resx">
+    <EmbeddedResource Include="GUI\AddNewUserForm.resx">
       <DependentUpon>AddNewUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CategoriesManagerForm.resx">
+    <EmbeddedResource Include="GUI\CategoriesManagerForm.resx">
       <DependentUpon>CategoriesManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangePasswordForm.resx">
+    <EmbeddedResource Include="GUI\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUserForm.resx">
+    <EmbeddedResource Include="GUI\EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205131213166_InitialCreate.resx">
@@ -210,10 +210,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SignUpForm.resx">
+    <EmbeddedResource Include="GUI\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersPanelForm.resx">
+    <EmbeddedResource Include="GUI\UsersPanelForm.resx">
       <DependentUpon>UsersPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -230,11 +230,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DBModels\" />
-    <Folder Include="GUI\" />
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
