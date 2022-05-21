@@ -15,7 +15,8 @@ namespace GameManager
         public LoginForm()
         {
             InitializeComponent();
-            
+            LoginLogic loginLogic = new LoginLogic();
+            loginLogic.init();
         }
 
         private void Form1_Load(object sender, EventArgs e)

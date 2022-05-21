@@ -9,8 +9,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "GameManager.CategoriesContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(GameManager.GameManagerContext context)

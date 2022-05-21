@@ -17,11 +17,13 @@ namespace GameManager
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            categoriesManagerLogic.fillListBox(CategoriesListBox);
         }
 
         private void AddNewForestButton_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -99,7 +99,6 @@
     </Compile>
     <Compile Include="Logic\EditUserLogic.cs" />
     <Compile Include="DBModels\Ent.cs" />
-    <Compile Include="GameElement.cs" />
     <Compile Include="GameManagerContext.cs" />
     <Compile Include="DBModels\Caves.cs" />
     <Compile Include="DBModels\Forests.cs" />
@@ -118,28 +117,12 @@
     <Compile Include="GUI\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205131213166_InitialCreate.cs" />
-    <Compile Include="Migrations\202205131213166_InitialCreate.designer.cs">
-      <DependentUpon>202205131213166_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205132219421_myMigration.cs" />
-    <Compile Include="Migrations\202205132219421_myMigration.designer.cs">
-      <DependentUpon>202205132219421_myMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205132333570_AddEmailToUsers.cs" />
-    <Compile Include="Migrations\202205132333570_AddEmailToUsers.designer.cs">
-      <DependentUpon>202205132333570_AddEmailToUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205211729163_newMigration.cs" />
-    <Compile Include="Migrations\202205211729163_newMigration.designer.cs">
-      <DependentUpon>202205211729163_newMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205212018189_AddedCategoriesAndElements.cs" />
-    <Compile Include="Migrations\202205212018189_AddedCategoriesAndElements.designer.cs">
-      <DependentUpon>202205212018189_AddedCategoriesAndElements.cs</DependentUpon>
+    <Compile Include="DBModels\Mummy.cs" />
+    <Compile Include="Migrations\202205212228584_Initial.cs" />
+    <Compile Include="Migrations\202205212228584_Initial.designer.cs">
+      <DependentUpon>202205212228584_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="DBModels\Mummy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DBModels\Roles.cs" />
@@ -186,20 +169,8 @@
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205131213166_InitialCreate.resx">
-      <DependentUpon>202205131213166_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205132219421_myMigration.resx">
-      <DependentUpon>202205132219421_myMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205132333570_AddEmailToUsers.resx">
-      <DependentUpon>202205132333570_AddEmailToUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205211729163_newMigration.resx">
-      <DependentUpon>202205211729163_newMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205212018189_AddedCategoriesAndElements.resx">
-      <DependentUpon>202205212018189_AddedCategoriesAndElements.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205212228584_Initial.resx">
+      <DependentUpon>202205212228584_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

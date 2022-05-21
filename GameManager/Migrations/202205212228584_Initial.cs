@@ -3,11 +3,10 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedCategoriesAndElements : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
-            RenameTable(name: "dbo.Castegories", newName: "Categories");
             CreateTable(
                 "dbo.Alchemists",
                 c => new
@@ -40,6 +39,15 @@
                 .Index(t => t.Castegory_Id);
             
             CreateTable(
+                "dbo.Categories",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Archers",
                 c => new
                     {
@@ -57,6 +65,20 @@
                 .Index(t => t.Castle_Id);
             
             CreateTable(
+                "dbo.Castles",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        name = c.String(),
+                        towersNumber = c.Int(nullable: false),
+                        buildYear = c.Int(nullable: false),
+                        Castegory_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Categories", t => t.Castegory_Id)
+                .Index(t => t.Castegory_Id);
+            
+            CreateTable(
                 "dbo.Bats",
                 c => new
                     {
@@ -72,6 +94,20 @@
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Caves", t => t.Cave_Id)
                 .Index(t => t.Cave_Id);
+            
+            CreateTable(
+                "dbo.Caves",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        caveName = c.String(),
+                        caveArea = c.Int(nullable: false),
+                        caveDescription = c.String(),
+                        Castegory_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Categories", t => t.Castegory_Id)
+                .Index(t => t.Castegory_Id);
             
             CreateTable(
                 "dbo.Cobras",
@@ -138,6 +174,19 @@
                 .Index(t => t.Forest_Id);
             
             CreateTable(
+                "dbo.Forests",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Area = c.Int(nullable: false),
+                        Category_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Categories", t => t.Category_Id)
+                .Index(t => t.Category_Id);
+            
+            CreateTable(
                 "dbo.Golems",
                 c => new
                     {
@@ -189,6 +238,15 @@
                 .Index(t => t.Desert_Id);
             
             CreateTable(
+                "dbo.Roles",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Scorpions",
                 c => new
                     {
@@ -221,6 +279,20 @@
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Forests", t => t.Forest_Id)
                 .Index(t => t.Forest_Id);
+            
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Username = c.String(),
+                        Password = c.String(),
+                        Email = c.String(),
+                        Role_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Roles", t => t.Role_Id)
+                .Index(t => t.Role_Id);
             
             CreateTable(
                 "dbo.Warewolves",
@@ -290,68 +362,75 @@
                 .ForeignKey("dbo.Temples", t => t.Temple_Id)
                 .Index(t => t.Temple_Id);
             
-            AddColumn("dbo.Castles", "name", c => c.String());
-            DropColumn("dbo.Castles", "material");
-            DropColumn("dbo.Forests", "forestType");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Forests", "forestType", c => c.String());
-            AddColumn("dbo.Castles", "material", c => c.String());
             DropForeignKey("dbo.Wizzards", "Temple_Id", "dbo.Temples");
             DropForeignKey("dbo.Witches", "Temple_Id", "dbo.Temples");
             DropForeignKey("dbo.Warriors", "Castle_Id", "dbo.Castles");
             DropForeignKey("dbo.Warewolves", "Forest_Id", "dbo.Forests");
+            DropForeignKey("dbo.Users", "Role_Id", "dbo.Roles");
             DropForeignKey("dbo.Spiders", "Forest_Id", "dbo.Forests");
             DropForeignKey("dbo.Scorpions", "Desert_Id", "dbo.Deserts");
             DropForeignKey("dbo.Mummies", "Desert_Id", "dbo.Deserts");
             DropForeignKey("dbo.Knights", "Castle_Id", "dbo.Castles");
             DropForeignKey("dbo.Golems", "Cave_Id", "dbo.Caves");
             DropForeignKey("dbo.Ents", "Forest_Id", "dbo.Forests");
+            DropForeignKey("dbo.Forests", "Category_Id", "dbo.Categories");
             DropForeignKey("dbo.Dragons", "Cave_Id", "dbo.Caves");
             DropForeignKey("dbo.Cobras", "Desert_Id", "dbo.Deserts");
             DropForeignKey("dbo.Deserts", "Castegory_Id", "dbo.Categories");
             DropForeignKey("dbo.Bats", "Cave_Id", "dbo.Caves");
+            DropForeignKey("dbo.Caves", "Castegory_Id", "dbo.Categories");
             DropForeignKey("dbo.Archers", "Castle_Id", "dbo.Castles");
+            DropForeignKey("dbo.Castles", "Castegory_Id", "dbo.Categories");
             DropForeignKey("dbo.Alchemists", "Temple_Id", "dbo.Temples");
             DropForeignKey("dbo.Temples", "Castegory_Id", "dbo.Categories");
             DropIndex("dbo.Wizzards", new[] { "Temple_Id" });
             DropIndex("dbo.Witches", new[] { "Temple_Id" });
             DropIndex("dbo.Warriors", new[] { "Castle_Id" });
             DropIndex("dbo.Warewolves", new[] { "Forest_Id" });
+            DropIndex("dbo.Users", new[] { "Role_Id" });
             DropIndex("dbo.Spiders", new[] { "Forest_Id" });
             DropIndex("dbo.Scorpions", new[] { "Desert_Id" });
             DropIndex("dbo.Mummies", new[] { "Desert_Id" });
             DropIndex("dbo.Knights", new[] { "Castle_Id" });
             DropIndex("dbo.Golems", new[] { "Cave_Id" });
+            DropIndex("dbo.Forests", new[] { "Category_Id" });
             DropIndex("dbo.Ents", new[] { "Forest_Id" });
             DropIndex("dbo.Dragons", new[] { "Cave_Id" });
             DropIndex("dbo.Deserts", new[] { "Castegory_Id" });
             DropIndex("dbo.Cobras", new[] { "Desert_Id" });
+            DropIndex("dbo.Caves", new[] { "Castegory_Id" });
             DropIndex("dbo.Bats", new[] { "Cave_Id" });
+            DropIndex("dbo.Castles", new[] { "Castegory_Id" });
             DropIndex("dbo.Archers", new[] { "Castle_Id" });
             DropIndex("dbo.Temples", new[] { "Castegory_Id" });
             DropIndex("dbo.Alchemists", new[] { "Temple_Id" });
-            DropColumn("dbo.Castles", "name");
             DropTable("dbo.Wizzards");
             DropTable("dbo.Witches");
             DropTable("dbo.Warriors");
             DropTable("dbo.Warewolves");
+            DropTable("dbo.Users");
             DropTable("dbo.Spiders");
             DropTable("dbo.Scorpions");
+            DropTable("dbo.Roles");
             DropTable("dbo.Mummies");
             DropTable("dbo.Knights");
             DropTable("dbo.Golems");
+            DropTable("dbo.Forests");
             DropTable("dbo.Ents");
             DropTable("dbo.Dragons");
             DropTable("dbo.Deserts");
             DropTable("dbo.Cobras");
+            DropTable("dbo.Caves");
             DropTable("dbo.Bats");
+            DropTable("dbo.Castles");
             DropTable("dbo.Archers");
+            DropTable("dbo.Categories");
             DropTable("dbo.Temples");
             DropTable("dbo.Alchemists");
-            RenameTable(name: "dbo.Categories", newName: "Castegories");
         }
     }
 }

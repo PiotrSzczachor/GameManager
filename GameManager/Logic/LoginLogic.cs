@@ -56,5 +56,34 @@ namespace GameManager
                 
         }
 
+        public void init()
+        {
+            using (var db = new GameManagerContext())
+            {
+                if (db.Roles.Count() == 0)
+                {
+                    Roles adminRole = new Roles { Name = "Admin" };
+                    Roles userRole = new Roles { Name = "User" };
+                    db.Roles.Add(adminRole);
+                    db.Roles.Add(userRole);
+                    db.SaveChanges();
+                }
+                if (db.Categories.Count() == 0)
+                {
+                    Categories forest = new Categories { Name = "Forest" };
+                    Categories temple = new Categories { Name = "Temple" };
+                    Categories castle = new Categories { Name = "Castle" };
+                    Categories cave = new Categories { Name = "Cave" };
+                    Categories desert = new Categories { Name = "Desert" };
+                    db.Categories.Add(forest);
+                    db.Categories.Add(temple);
+                    db.Categories.Add(castle);
+                    db.Categories.Add(cave);
+                    db.Categories.Add(desert);
+                    db.SaveChanges();
+                }
+            }
+        }
+
     }
 }

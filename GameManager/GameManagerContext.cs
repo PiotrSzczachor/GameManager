@@ -14,10 +14,10 @@ namespace GameManager
 
         }
 
+        public DbSet<Forests> Forests { get; set; }
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Castles> Castles { get; set; }
         public DbSet<Caves> Caves { get; set; }
-        public DbSet<Forests> Forests { get; set; }
         public DbSet<Temple> Temples { get; set; }
         public DbSet<Desert> Deserts { get; set; }
         public DbSet<Users> Users { get; set; }

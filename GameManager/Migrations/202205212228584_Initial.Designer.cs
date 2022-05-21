@@ -7,13 +7,13 @@ namespace GameManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddedCategoriesAndElements : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedCategoriesAndElements));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205212018189_AddedCategoriesAndElements"; }
+            get { return "202205212228584_Initial"; }
         }
         
         string IMigrationMetadata.Source
