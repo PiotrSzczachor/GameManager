@@ -48,6 +48,7 @@
             this.CategoriesListBox.Name = "CategoriesListBox";
             this.CategoriesListBox.Size = new System.Drawing.Size(1009, 404);
             this.CategoriesListBox.TabIndex = 0;
+            this.CategoriesListBox.SelectedValueChanged += new System.EventHandler(this.CategoriesListBox_SelectedValueChanged);
             // 
             // AddNewForestButton
             // 
@@ -131,6 +132,7 @@
             this.DeleteButton.TabIndex = 9;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // CategoriesManagerForm
             // 

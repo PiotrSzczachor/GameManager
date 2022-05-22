@@ -66,5 +66,21 @@ namespace GameManager
             new AddCaveForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
+
+        private void CategoriesListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            EditButton.Enabled = true;
+            DeleteButton.Enabled = true;
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            if (CategoriesListBox.SelectedItem.ToString().Contains("Type: Forest"))
+            {
+                string id = CategoriesListBox.SelectedItem.ToString().Split(':')[4].Replace(" ", "");
+                categoriesManagerLogic.deleteForest(id, CategoriesListBox);
+            }
+        }
     }
 }
