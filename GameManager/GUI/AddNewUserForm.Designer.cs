@@ -45,19 +45,19 @@
             // Time
             // 
             this.Time.AutoSize = true;
-            this.Time.Location = new System.Drawing.Point(3, 12);
+            this.Time.Location = new System.Drawing.Point(4, 18);
+            this.Time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(13, 13);
+            this.Time.Size = new System.Drawing.Size(18, 20);
             this.Time.TabIndex = 19;
             this.Time.Text = "0";
             this.Time.Visible = false;
             // 
             // AddUserButton
             // 
-            this.AddUserButton.Location = new System.Drawing.Point(209, 118);
-            this.AddUserButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddUserButton.Location = new System.Drawing.Point(314, 182);
             this.AddUserButton.Name = "AddUserButton";
-            this.AddUserButton.Size = new System.Drawing.Size(75, 27);
+            this.AddUserButton.Size = new System.Drawing.Size(112, 42);
             this.AddUserButton.TabIndex = 18;
             this.AddUserButton.Text = "Add user";
             this.AddUserButton.UseVisualStyleBackColor = true;
@@ -65,10 +65,9 @@
             // 
             // ResetButton
             // 
-            this.ResetButton.Location = new System.Drawing.Point(131, 118);
-            this.ResetButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ResetButton.Location = new System.Drawing.Point(196, 182);
             this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(75, 27);
+            this.ResetButton.Size = new System.Drawing.Size(112, 42);
             this.ResetButton.TabIndex = 17;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
@@ -76,10 +75,9 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(52, 118);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CancelButton.Location = new System.Drawing.Point(78, 182);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 27);
+            this.CancelButton.Size = new System.Drawing.Size(112, 42);
             this.CancelButton.TabIndex = 16;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -89,10 +87,9 @@
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EmailLabel.Location = new System.Drawing.Point(69, 90);
-            this.EmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EmailLabel.Location = new System.Drawing.Point(104, 138);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(46, 15);
+            this.EmailLabel.Size = new System.Drawing.Size(65, 22);
             this.EmailLabel.TabIndex = 15;
             this.EmailLabel.Text = "E-mail:";
             // 
@@ -100,10 +97,9 @@
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PasswordLabel.Location = new System.Drawing.Point(49, 61);
-            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PasswordLabel.Location = new System.Drawing.Point(74, 94);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(64, 15);
+            this.PasswordLabel.Size = new System.Drawing.Size(94, 22);
             this.PasswordLabel.TabIndex = 14;
             this.PasswordLabel.Text = "Password:";
             // 
@@ -111,38 +107,34 @@
             // 
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.UsernameLabel.Location = new System.Drawing.Point(47, 33);
-            this.UsernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UsernameLabel.Location = new System.Drawing.Point(70, 51);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(68, 15);
+            this.UsernameLabel.Size = new System.Drawing.Size(97, 22);
             this.UsernameLabel.TabIndex = 13;
             this.UsernameLabel.Text = "Username:";
             // 
             // EmailBox
             // 
-            this.EmailBox.Location = new System.Drawing.Point(116, 89);
-            this.EmailBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EmailBox.Location = new System.Drawing.Point(174, 137);
             this.EmailBox.MaxLength = 40;
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(173, 20);
+            this.EmailBox.Size = new System.Drawing.Size(258, 26);
             this.EmailBox.TabIndex = 12;
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(116, 61);
-            this.PasswordBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordBox.Location = new System.Drawing.Point(174, 94);
             this.PasswordBox.MaxLength = 15;
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(173, 20);
+            this.PasswordBox.Size = new System.Drawing.Size(258, 26);
             this.PasswordBox.TabIndex = 11;
             // 
             // UsernameBox
             // 
-            this.UsernameBox.Location = new System.Drawing.Point(116, 33);
-            this.UsernameBox.Margin = new System.Windows.Forms.Padding(2);
+            this.UsernameBox.Location = new System.Drawing.Point(174, 51);
             this.UsernameBox.MaxLength = 15;
             this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(173, 20);
+            this.UsernameBox.Size = new System.Drawing.Size(258, 26);
             this.UsernameBox.TabIndex = 10;
             // 
             // RedirectTimer
@@ -151,9 +143,9 @@
             // 
             // AddNewUserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 159);
+            this.ClientSize = new System.Drawing.Size(512, 245);
             this.Controls.Add(this.Time);
             this.Controls.Add(this.AddUserButton);
             this.Controls.Add(this.ResetButton);
@@ -164,9 +156,10 @@
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.UsernameBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddNewUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddNewUserForm";
+            this.Text = "Add new user";
             this.ResumeLayout(false);
             this.PerformLayout();
 

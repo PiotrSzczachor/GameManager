@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager.GUI;
+using GameManager.Logic;
 
 namespace GameManager
 {
@@ -16,6 +18,8 @@ namespace GameManager
         public CategoriesManagerForm(Users user)
         {
             InitializeComponent();
+            EditButton.Enabled = false;
+            DeleteButton.Enabled = false;
             currentlyLoggedUser = user;
             CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
             categoriesManagerLogic.fillListBox(CategoriesListBox);
@@ -23,7 +27,44 @@ namespace GameManager
 
         private void AddNewForestButton_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            new AddForestOrDesertForm(currentlyLoggedUser, true).ShowDialog();
+            this.Close();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Menu(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
+
+        private void AddNewDesertButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddForestOrDesertForm(currentlyLoggedUser, false).ShowDialog();
+            this.Close();
+        }
+
+        private void AddNewTempleButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddTempleOrCastleForm(currentlyLoggedUser, true).ShowDialog();
+            this.Hide();
+        }
+
+        private void AddNewCastleButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddTempleOrCastleForm(currentlyLoggedUser, false).ShowDialog();
+            this.Hide();
+        }
+
+        private void AddNewCaveButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddCaveForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
         }
     }
 }

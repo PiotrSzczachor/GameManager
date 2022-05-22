@@ -56,11 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\AddCaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddCaveForm.Designer.cs">
+      <DependentUpon>AddCaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddForestOrDesertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddForestOrDesertForm.Designer.cs">
+      <DependentUpon>AddForestOrDesertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\AccountInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\AccountInfoForm.Designer.cs">
       <DependentUpon>AccountInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddTempleOrCastleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddTempleOrCastleForm.Designer.cs">
+      <DependentUpon>AddTempleOrCastleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\AccountInfoLogic.cs" />
     <Compile Include="GUI\AddNewUserForm.cs">
@@ -80,6 +98,7 @@
     <Compile Include="GUI\CategoriesManagerForm.Designer.cs">
       <DependentUpon>CategoriesManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AddCategoryLogic.cs" />
     <Compile Include="Logic\CategoriesManagerLogic.cs" />
     <Compile Include="GUI\ChangePasswordForm.cs">
       <SubType>Form</SubType>
@@ -148,11 +167,20 @@
     <Compile Include="DBModels\Warewolf.cs" />
     <Compile Include="DBModels\Witch.cs" />
     <Compile Include="DBModels\Wizzard.cs" />
+    <EmbeddedResource Include="GUI\AddCaveForm.resx">
+      <DependentUpon>AddCaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddForestOrDesertForm.resx">
+      <DependentUpon>AddForestOrDesertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AccountInfoForm.resx">
       <DependentUpon>AccountInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AddNewUserForm.resx">
       <DependentUpon>AddNewUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddTempleOrCastleForm.resx">
+      <DependentUpon>AddTempleOrCastleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CategoriesManagerForm.resx">
       <DependentUpon>CategoriesManagerForm.cs</DependentUpon>

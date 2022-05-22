@@ -34,6 +34,9 @@
             this.AddNewCaveButton = new System.Windows.Forms.Button();
             this.AddNewDesertButton = new System.Windows.Forms.Button();
             this.AddNewCastleButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CategoriesListBox
@@ -66,6 +69,7 @@
             this.AddNewTempleButton.TabIndex = 2;
             this.AddNewTempleButton.Text = "Add new temple";
             this.AddNewTempleButton.UseVisualStyleBackColor = true;
+            this.AddNewTempleButton.Click += new System.EventHandler(this.AddNewTempleButton_Click);
             // 
             // AddNewCaveButton
             // 
@@ -76,6 +80,7 @@
             this.AddNewCaveButton.TabIndex = 4;
             this.AddNewCaveButton.Text = "Add new cave";
             this.AddNewCaveButton.UseVisualStyleBackColor = true;
+            this.AddNewCaveButton.Click += new System.EventHandler(this.AddNewCaveButton_Click);
             // 
             // AddNewDesertButton
             // 
@@ -86,6 +91,7 @@
             this.AddNewDesertButton.TabIndex = 5;
             this.AddNewDesertButton.Text = "Add new desert";
             this.AddNewDesertButton.UseVisualStyleBackColor = true;
+            this.AddNewDesertButton.Click += new System.EventHandler(this.AddNewDesertButton_Click);
             // 
             // AddNewCastleButton
             // 
@@ -96,12 +102,44 @@
             this.AddNewCastleButton.TabIndex = 6;
             this.AddNewCastleButton.Text = "Add new castle";
             this.AddNewCastleButton.UseVisualStyleBackColor = true;
+            this.AddNewCastleButton.Click += new System.EventHandler(this.AddNewCastleButton_Click);
+            // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(222, 25);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(195, 52);
+            this.BackButton.TabIndex = 7;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Location = new System.Drawing.Point(426, 25);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(195, 52);
+            this.EditButton.TabIndex = 8;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(630, 25);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(195, 52);
+            this.DeleteButton.TabIndex = 9;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
             // 
             // CategoriesManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 591);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.AddNewCastleButton);
             this.Controls.Add(this.AddNewDesertButton);
             this.Controls.Add(this.AddNewCaveButton);
@@ -124,5 +162,8 @@
         private System.Windows.Forms.Button AddNewCaveButton;
         private System.Windows.Forms.Button AddNewDesertButton;
         private System.Windows.Forms.Button AddNewCastleButton;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
