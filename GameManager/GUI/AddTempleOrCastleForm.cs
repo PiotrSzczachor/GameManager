@@ -65,10 +65,6 @@ namespace GameManager.GUI
                 {
                     addCategoryLogic.addCastle(NameTextBox.Text, Int32.Parse(NumberTextBox.Text), Int32.Parse(BuildYearTextBox.Text));
                 }
-                MessageBox.Show("Added successfully",
-                                    "Added successfully",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
             }
             else
             {

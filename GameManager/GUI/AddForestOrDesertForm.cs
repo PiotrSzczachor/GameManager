@@ -49,11 +49,6 @@ namespace GameManager
                 {
                     addCategoryLogic.addDesert(NameTextBox.Text, Int32.Parse(AreaTextBox.Text));
                 }
-                MessageBox.Show("Added successfully",
-                                    "Added successfully",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
             } else
             {
                 MessageBox.Show("You need to fill all TextBoxes",

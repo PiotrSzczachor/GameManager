@@ -44,22 +44,24 @@ namespace GameManager
             this.Close();
         }
 
-        private void UsersListBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            DeleteButton.Enabled = true;
-            EditButton.Enabled = true;
-            if(UsersListBox.SelectedItem != null)
-            {
-                selectedUsername = UsersListBox.SelectedItem.ToString().Split(':')[1].Replace(" ", "");
-            }
-            
-        }
-
         private void AddNewUserButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             new AddNewUserForm(currentlyLoggedUser).ShowDialog();
             this.Close();
+        }
+
+        private void UsersListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(UsersListBox.SelectedIndex >= 0)
+            {
+                DeleteButton.Enabled = true;
+                EditButton.Enabled = true;
+            }
+            if (UsersListBox.SelectedItem != null)
+            {
+                selectedUsername = UsersListBox.SelectedItem.ToString().Split(':')[1].Replace(" ", "");
+            }
         }
     }
 }

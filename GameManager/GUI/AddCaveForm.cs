@@ -41,10 +41,6 @@ namespace GameManager.GUI
             if (NameTextBox.Text != "" && AreaTextBox.Text != "" && DescriptionTextBox.Text != "")
             {
                 addCategoryLogic.addCave(NameTextBox.Text, Int32.Parse(AreaTextBox.Text), DescriptionTextBox.Text);
-                MessageBox.Show("Added successfully",
-                                    "Added successfully",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
             }
             else
             {

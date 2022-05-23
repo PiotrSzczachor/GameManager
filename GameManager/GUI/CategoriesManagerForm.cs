@@ -67,20 +67,121 @@ namespace GameManager
             this.Close();
         }
 
-        private void CategoriesListBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            EditButton.Enabled = true;
-            DeleteButton.Enabled = true;
-        }
-
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            bool wasDeleted = false;
             CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
-            if (CategoriesListBox.SelectedItem.ToString().Contains("Type: Forest"))
+            if (!wasDeleted)
             {
-                string id = CategoriesListBox.SelectedItem.ToString().Split(':')[4].Replace(" ", "");
-                categoriesManagerLogic.deleteForest(id, CategoriesListBox);
+                if (CategoriesListBox.SelectedItem.ToString().Contains("Type: Forest"))
+                {
+                    string id = CategoriesListBox.SelectedItem.ToString().Split(':')[4].Replace(" ", "");
+                    categoriesManagerLogic.deleteForest(id, CategoriesListBox);
+                    wasDeleted = true;
+                }
             }
+            if (!wasDeleted)
+            {
+                if (CategoriesListBox.SelectedItem.ToString().Contains("Type: Temple"))
+                {
+                    string id = CategoriesListBox.SelectedItem.ToString().Split(':')[5].Replace(" ", "");
+                    categoriesManagerLogic.deleteTemple(id, CategoriesListBox);
+                    wasDeleted = true;
+                }
+            }
+            if (!wasDeleted)
+            {
+                if (CategoriesListBox.SelectedItem.ToString().Contains("Type: Castle"))
+                {
+                    string id = CategoriesListBox.SelectedItem.ToString().Split(':')[5].Replace(" ", "");
+                    categoriesManagerLogic.deleteCastle(id, CategoriesListBox);
+                    wasDeleted = true;
+                }
+            }
+            if (!wasDeleted)
+            {
+                if (CategoriesListBox.SelectedItem.ToString().Contains("Type: Cave"))
+                {
+                    string id = CategoriesListBox.SelectedItem.ToString().Split(':')[5].Replace(" ", "");
+                    categoriesManagerLogic.deleteCave(id, CategoriesListBox);
+                    wasDeleted = true;
+                }
+            }
+            if (!wasDeleted)
+            {
+                if (CategoriesListBox.SelectedItem.ToString().Contains("Type: Desert"))
+                {
+                    string id = CategoriesListBox.SelectedItem.ToString().Split(':')[4].Replace(" ", "");
+                    categoriesManagerLogic.deleteDesert(id, CategoriesListBox);
+                    wasDeleted = true;
+                }
+            }
+            DeleteButton.Enabled = false;
+            EditButton.Enabled = false;
+        }
+
+        private void forestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteButton.Enabled = false;
+            EditButton.Enabled = false;
+            CategoriesListBox.Items.Clear();
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            categoriesManagerLogic.fillListBoxWithForests(CategoriesListBox, new GameManagerContext());
+        }
+
+        private void ResetFiltersButton_Click(object sender, EventArgs e)
+        {
+            DeleteButton.Enabled = false;
+            EditButton.Enabled = false;
+            CategoriesListBox.Items.Clear();
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            categoriesManagerLogic.fillListBox(CategoriesListBox);
+        }
+
+        private void CategoriesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CategoriesListBox.SelectedIndex >= 0)
+            {
+                DeleteButton.Enabled = true;
+                EditButton.Enabled = true;
+            }
+            
+        }
+
+        private void templesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteButton.Enabled = false;
+            EditButton.Enabled = false;
+            CategoriesListBox.Items.Clear();
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            categoriesManagerLogic.fillListBoxWithTemples(CategoriesListBox, new GameManagerContext());
+        }
+
+        private void cavesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteButton.Enabled = false;
+            EditButton.Enabled = false;
+            CategoriesListBox.Items.Clear();
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            categoriesManagerLogic.fillListBoxWithCastles(CategoriesListBox, new GameManagerContext());
+        }
+
+        private void cavesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DeleteButton.Enabled = false;
+            EditButton.Enabled = false;
+            CategoriesListBox.Items.Clear();
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            categoriesManagerLogic.fillListBoxWithCaves(CategoriesListBox, new GameManagerContext());
+        }
+
+        private void desertsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteButton.Enabled = false;
+            EditButton.Enabled = false;
+            CategoriesListBox.Items.Clear();
+            CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
+            categoriesManagerLogic.fillListBoxWithDeserts(CategoriesListBox, new GameManagerContext());
         }
     }
 }

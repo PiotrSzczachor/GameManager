@@ -53,7 +53,7 @@
             this.UsersListBox.Name = "UsersListBox";
             this.UsersListBox.Size = new System.Drawing.Size(438, 225);
             this.UsersListBox.TabIndex = 1;
-            this.UsersListBox.SelectedValueChanged += new System.EventHandler(this.UsersListBox_SelectedValueChanged);
+            this.UsersListBox.SelectedIndexChanged += new System.EventHandler(this.UsersListBox_SelectedIndexChanged);
             // 
             // BackButton
             // 
