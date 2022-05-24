@@ -28,7 +28,7 @@ namespace GameManager
         private void AddNewForestButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddForestOrDesertForm(currentlyLoggedUser, true).ShowDialog();
+            new AddOrEditForestOrDesertForm(currentlyLoggedUser, true, false, "").ShowDialog();
             this.Close();
         }
 
@@ -42,28 +42,28 @@ namespace GameManager
         private void AddNewDesertButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddForestOrDesertForm(currentlyLoggedUser, false).ShowDialog();
+            new AddOrEditForestOrDesertForm(currentlyLoggedUser, false, false, "").ShowDialog();
             this.Close();
         }
 
         private void AddNewTempleButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddTempleOrCastleForm(currentlyLoggedUser, true).ShowDialog();
+            new AddOrEditTempleOrCastleForm(currentlyLoggedUser, true, false, "").ShowDialog();
             this.Hide();
         }
 
         private void AddNewCastleButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddTempleOrCastleForm(currentlyLoggedUser, false).ShowDialog();
+            new AddOrEditTempleOrCastleForm(currentlyLoggedUser, false, false, "").ShowDialog();
             this.Hide();
         }
 
         private void AddNewCaveButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddCaveForm(currentlyLoggedUser).ShowDialog();
+            new AddOrEditCaveForm(currentlyLoggedUser, false, "").ShowDialog();
             this.Close();
         }
 
@@ -182,6 +182,41 @@ namespace GameManager
             CategoriesListBox.Items.Clear();
             CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
             categoriesManagerLogic.fillListBoxWithDeserts(CategoriesListBox, new GameManagerContext());
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            string selected = CategoriesListBox.SelectedItem.ToString();
+            if (selected.Contains("Type: Forest"))
+            {
+                this.Hide();
+                new AddOrEditForestOrDesertForm(currentlyLoggedUser, true, true, selected).ShowDialog();
+                this.Close();
+            }
+            if (selected.Contains("Type: Desert"))
+            {
+                this.Hide();
+                new AddOrEditForestOrDesertForm(currentlyLoggedUser, false, true, selected).ShowDialog();
+                this.Close();
+            }
+            if (selected.Contains("Type: Temple"))
+            {
+                this.Hide();
+                new AddOrEditTempleOrCastleForm(currentlyLoggedUser, true, true, selected).ShowDialog();
+                this.Close();
+            }
+            if (selected.Contains("Type: Castle"))
+            {
+                this.Hide();
+                new AddOrEditTempleOrCastleForm(currentlyLoggedUser, false, true, selected).ShowDialog();
+                this.Close();
+            }
+            if (selected.Contains("Type: Cave"))
+            {
+                this.Hide();
+                new AddOrEditCaveForm(currentlyLoggedUser, true, selected).ShowDialog();
+                this.Close();
+            }
         }
     }
 }

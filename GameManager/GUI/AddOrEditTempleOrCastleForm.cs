@@ -11,15 +11,19 @@ using GameManager.Logic;
 
 namespace GameManager.GUI
 {
-    public partial class AddTempleOrCastleForm : Form
+    public partial class AddOrEditTempleOrCastleForm : Form
     {
         Users currentlyLoggedUser;
         bool isTemple;
-        public AddTempleOrCastleForm(Users user, bool temple)
+        bool isEdit;
+        string instance;
+        public AddOrEditTempleOrCastleForm(Users user, bool temple, bool edit, string instance_)
         {
             InitializeComponent();
             currentlyLoggedUser = user;
             isTemple = temple;
+            isEdit = edit;
+            instance = instance_;
             if (isTemple)
             {
                 NumberLabel.Text = "Chambers number: ";
@@ -27,6 +31,13 @@ namespace GameManager.GUI
             {
                 NumberLabel.Text = "Towers number: ";
             }
+            if (isEdit)
+            {
+                EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
+                editCategoryLogic.fillTempleOrCastleTextBoxes(NameTextBox, NumberTextBox, BuildYearTextBox, isTemple);
+            }
+
+            
         }
 
         private void AreaTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -54,55 +65,35 @@ namespace GameManager.GUI
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            AddCategoryLogic addCategoryLogic = new AddCategoryLogic();
-            if (NameTextBox.Text != "" && NumberTextBox.Text != "" && BuildYearTextBox.Text != "")
+            // Adding new category
+            if (!isEdit)
             {
-                if (isTemple)
+                AddCategoryLogic addCategoryLogic = new AddCategoryLogic();
+                if (NameTextBox.Text != "" && NumberTextBox.Text != "" && BuildYearTextBox.Text != "")
                 {
-                    addCategoryLogic.addTemple(NameTextBox.Text, Int32.Parse(NumberTextBox.Text), Int32.Parse(BuildYearTextBox.Text));
+                    if (isTemple)
+                    {
+                        addCategoryLogic.addTemple(NameTextBox.Text, Int32.Parse(NumberTextBox.Text), Int32.Parse(BuildYearTextBox.Text));
+                    }
+                    else
+                    {
+                        addCategoryLogic.addCastle(NameTextBox.Text, Int32.Parse(NumberTextBox.Text), Int32.Parse(BuildYearTextBox.Text));
+                    }
                 }
                 else
                 {
-                    addCategoryLogic.addCastle(NameTextBox.Text, Int32.Parse(NumberTextBox.Text), Int32.Parse(BuildYearTextBox.Text));
+                    MessageBox.Show("You need to fill all TextBoxes",
+                                        "Fill all TextBox",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                 }
-            }
-            else
+            } else
+            // Editing existing category
             {
-                MessageBox.Show("You need to fill all TextBoxes",
-                                    "Fill all TextBox",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+
             }
+            
         }
 
-        private void BuildYearTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BuildYearLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NumberLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NumberTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

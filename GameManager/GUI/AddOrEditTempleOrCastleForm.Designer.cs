@@ -1,6 +1,6 @@
 ﻿namespace GameManager.GUI
 {
-    partial class AddTempleOrCastleForm
+    partial class AddOrEditTempleOrCastleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -67,7 +67,6 @@
             this.NumberLabel.Size = new System.Drawing.Size(162, 22);
             this.NumberLabel.TabIndex = 9;
             this.NumberLabel.Text = "Chambers number:";
-            this.NumberLabel.Click += new System.EventHandler(this.NumberLabel_Click);
             // 
             // NameLabel
             // 
@@ -78,7 +77,6 @@
             this.NameLabel.Size = new System.Drawing.Size(62, 22);
             this.NameLabel.TabIndex = 8;
             this.NameLabel.Text = "Name:";
-            this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
             // NumberTextBox
             // 
@@ -86,7 +84,6 @@
             this.NumberTextBox.Name = "NumberTextBox";
             this.NumberTextBox.Size = new System.Drawing.Size(224, 26);
             this.NumberTextBox.TabIndex = 7;
-            this.NumberTextBox.TextChanged += new System.EventHandler(this.NumberTextBox_TextChanged);
             this.NumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AreaTextBox_KeyPress);
             // 
             // NameTextBox
@@ -95,7 +92,6 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(224, 26);
             this.NameTextBox.TabIndex = 6;
-            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // BuildYearLabel
             // 
@@ -106,7 +102,6 @@
             this.BuildYearLabel.Size = new System.Drawing.Size(95, 22);
             this.BuildYearLabel.TabIndex = 13;
             this.BuildYearLabel.Text = "Build year:";
-            this.BuildYearLabel.Click += new System.EventHandler(this.BuildYearLabel_Click);
             // 
             // BuildYearTextBox
             // 
@@ -114,7 +109,6 @@
             this.BuildYearTextBox.Name = "BuildYearTextBox";
             this.BuildYearTextBox.Size = new System.Drawing.Size(224, 26);
             this.BuildYearTextBox.TabIndex = 12;
-            this.BuildYearTextBox.TextChanged += new System.EventHandler(this.BuildYearTextBox_TextChanged);
             this.BuildYearTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BuildYearTextBox_KeyPress);
             // 
             // AddTempleOrCastleForm

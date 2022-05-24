@@ -1,6 +1,6 @@
 ﻿namespace GameManager.GUI
 {
-    partial class AddCaveForm
+    partial class AddOrEditCaveForm
     {
         /// <summary>
         /// Required designer variable.

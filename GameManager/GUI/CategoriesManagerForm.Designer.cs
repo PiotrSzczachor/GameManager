@@ -127,6 +127,7 @@
             this.EditButton.TabIndex = 8;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // DeleteButton
             // 
@@ -164,35 +165,35 @@
             // forestsToolStripMenuItem
             // 
             this.forestsToolStripMenuItem.Name = "forestsToolStripMenuItem";
-            this.forestsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.forestsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.forestsToolStripMenuItem.Text = "Forests";
             this.forestsToolStripMenuItem.Click += new System.EventHandler(this.forestsToolStripMenuItem_Click);
             // 
             // templesToolStripMenuItem
             // 
             this.templesToolStripMenuItem.Name = "templesToolStripMenuItem";
-            this.templesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.templesToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.templesToolStripMenuItem.Text = "Temples";
             this.templesToolStripMenuItem.Click += new System.EventHandler(this.templesToolStripMenuItem_Click);
             // 
             // cavesToolStripMenuItem
             // 
             this.cavesToolStripMenuItem.Name = "cavesToolStripMenuItem";
-            this.cavesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cavesToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.cavesToolStripMenuItem.Text = "Castles";
             this.cavesToolStripMenuItem.Click += new System.EventHandler(this.cavesToolStripMenuItem_Click);
             // 
             // cavesToolStripMenuItem1
             // 
             this.cavesToolStripMenuItem1.Name = "cavesToolStripMenuItem1";
-            this.cavesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cavesToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.cavesToolStripMenuItem1.Text = "Caves";
             this.cavesToolStripMenuItem1.Click += new System.EventHandler(this.cavesToolStripMenuItem1_Click);
             // 
             // desertsToolStripMenuItem
             // 
             this.desertsToolStripMenuItem.Name = "desertsToolStripMenuItem";
-            this.desertsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desertsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.desertsToolStripMenuItem.Text = "Deserts";
             this.desertsToolStripMenuItem.Click += new System.EventHandler(this.desertsToolStripMenuItem_Click);
             // 

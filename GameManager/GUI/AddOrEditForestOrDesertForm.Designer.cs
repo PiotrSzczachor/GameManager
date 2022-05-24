@@ -1,6 +1,6 @@
 ﻿namespace GameManager
 {
-    partial class AddForestOrDesertForm
+    partial class AddOrEditForestOrDesertForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,6 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(224, 26);
             this.NameTextBox.TabIndex = 0;
-            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // AreaTextBox
             // 
@@ -50,7 +49,6 @@
             this.AreaTextBox.Name = "AreaTextBox";
             this.AreaTextBox.Size = new System.Drawing.Size(224, 26);
             this.AreaTextBox.TabIndex = 1;
-            this.AreaTextBox.TextChanged += new System.EventHandler(this.AreaTextBox_TextChanged);
             this.AreaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // NameLabel
@@ -62,7 +60,6 @@
             this.NameLabel.Size = new System.Drawing.Size(62, 22);
             this.NameLabel.TabIndex = 2;
             this.NameLabel.Text = "Name:";
-            this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
             // AreaLabel
             // 
@@ -73,7 +70,6 @@
             this.AreaLabel.Size = new System.Drawing.Size(53, 22);
             this.AreaLabel.TabIndex = 3;
             this.AreaLabel.Text = "Area:";
-            this.AreaLabel.Click += new System.EventHandler(this.AreaLabel_Click);
             // 
             // BackButton
             // 

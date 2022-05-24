@@ -56,17 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\AddCaveForm.cs">
+    <Compile Include="GUI\AddOrEditCaveForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\AddCaveForm.Designer.cs">
-      <DependentUpon>AddCaveForm.cs</DependentUpon>
+    <Compile Include="GUI\AddOrEditCaveForm.Designer.cs">
+      <DependentUpon>AddOrEditCaveForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\AddForestOrDesertForm.cs">
+    <Compile Include="GUI\AddOrEditForestOrDesertForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\AddForestOrDesertForm.Designer.cs">
-      <DependentUpon>AddForestOrDesertForm.cs</DependentUpon>
+    <Compile Include="GUI\AddOrEditForestOrDesertForm.Designer.cs">
+      <DependentUpon>AddOrEditForestOrDesertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\AccountInfoForm.cs">
       <SubType>Form</SubType>
@@ -74,11 +74,11 @@
     <Compile Include="GUI\AccountInfoForm.Designer.cs">
       <DependentUpon>AccountInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\AddTempleOrCastleForm.cs">
+    <Compile Include="GUI\AddOrEditTempleOrCastleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\AddTempleOrCastleForm.Designer.cs">
-      <DependentUpon>AddTempleOrCastleForm.cs</DependentUpon>
+    <Compile Include="GUI\AddOrEditTempleOrCastleForm.Designer.cs">
+      <DependentUpon>AddOrEditTempleOrCastleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\AccountInfoLogic.cs" />
     <Compile Include="GUI\AddNewUserForm.cs">
@@ -116,6 +116,7 @@
     <Compile Include="GUI\EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\EditCategoryLogic.cs" />
     <Compile Include="Logic\EditUserLogic.cs" />
     <Compile Include="DBModels\Ent.cs" />
     <Compile Include="GameManagerContext.cs" />
@@ -167,11 +168,11 @@
     <Compile Include="DBModels\Warewolf.cs" />
     <Compile Include="DBModels\Witch.cs" />
     <Compile Include="DBModels\Wizzard.cs" />
-    <EmbeddedResource Include="GUI\AddCaveForm.resx">
-      <DependentUpon>AddCaveForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\AddOrEditCaveForm.resx">
+      <DependentUpon>AddOrEditCaveForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AddForestOrDesertForm.resx">
-      <DependentUpon>AddForestOrDesertForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\AddOrEditForestOrDesertForm.resx">
+      <DependentUpon>AddOrEditForestOrDesertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AccountInfoForm.resx">
       <DependentUpon>AccountInfoForm.cs</DependentUpon>
@@ -179,8 +180,8 @@
     <EmbeddedResource Include="GUI\AddNewUserForm.resx">
       <DependentUpon>AddNewUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AddTempleOrCastleForm.resx">
-      <DependentUpon>AddTempleOrCastleForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\AddOrEditTempleOrCastleForm.resx">
+      <DependentUpon>AddOrEditTempleOrCastleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CategoriesManagerForm.resx">
       <DependentUpon>CategoriesManagerForm.cs</DependentUpon>

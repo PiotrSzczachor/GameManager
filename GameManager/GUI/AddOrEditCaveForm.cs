@@ -11,13 +11,22 @@ using GameManager.Logic;
 
 namespace GameManager.GUI
 {
-    public partial class AddCaveForm : Form
+    public partial class AddOrEditCaveForm : Form
     {
         Users currentlyLoggedUser;
-        public AddCaveForm(Users user)
+        bool isEdit;
+        string instance;
+        public AddOrEditCaveForm(Users user, bool edit, string instance_)
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            isEdit = edit;
+            instance = instance_;
+            if (isEdit)
+            {
+                EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
+                editCategoryLogic.fillCaveTextBoxes(NameTextBox, AreaTextBox, DescriptionTextBox);
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)

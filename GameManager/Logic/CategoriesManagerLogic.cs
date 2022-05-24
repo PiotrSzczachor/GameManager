@@ -56,7 +56,7 @@ namespace GameManager
             var caves = db.Caves;
             foreach (var cave in caves)
             {
-                string info = "Name: " + cave.caveName + "  |  Cave area: " + cave.caveArea + "  |  Cave description: " + cave.caveDescription + "  |  Type: " + cave.Castegory.Name + "  |  Cave ID: " + cave.Id;
+                string info = "Name: " + cave.caveName + "  |  Area: " + cave.caveArea + "  |  Description: " + cave.caveDescription + "  |  Type: " + cave.Castegory.Name + "  |  Cave ID: " + cave.Id;
                 CategoriesListBox.Items.Add(info);
             }
         }
@@ -137,6 +137,9 @@ namespace GameManager
         }
 
 
-        //public void editForest()
+        public void editForest()
+        {
+
+        }
     }
 }
