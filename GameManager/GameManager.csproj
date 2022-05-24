@@ -80,6 +80,12 @@
     <Compile Include="GUI\AddOrEditTempleOrCastleForm.Designer.cs">
       <DependentUpon>AddOrEditTempleOrCastleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ElementsManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ElementsManagerForm.Designer.cs">
+      <DependentUpon>ElementsManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\AccountInfoLogic.cs" />
     <Compile Include="GUI\AddNewUserForm.cs">
       <SubType>Form</SubType>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ElementsManagerForm.resx">
+      <DependentUpon>ElementsManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

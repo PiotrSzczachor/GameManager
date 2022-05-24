@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager.GUI;
 
 namespace GameManager
 {
@@ -46,6 +47,13 @@ namespace GameManager
         {
             this.Hide();
             new CategoriesManagerForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
+
+        private void ElementsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ElementsManagerForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
     }
