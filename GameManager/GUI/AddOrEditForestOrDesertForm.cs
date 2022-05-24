@@ -17,6 +17,8 @@ namespace GameManager
         bool isForest;
         bool isEdit;
         string instance;
+        string initName;
+        string initArea;
         public AddOrEditForestOrDesertForm(Users user, bool forest, bool edit, string instance_)
         {
             InitializeComponent();
@@ -28,6 +30,9 @@ namespace GameManager
             {
                 EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
                 editCategoryLogic.fillForestOrDesertTextBoxes(NameTextBox, AreaTextBox);
+                initName = NameTextBox.Text;
+                initArea = AreaTextBox.Text;
+                CheckingChanges.Enabled = true;
             }
         }
 
@@ -72,10 +77,28 @@ namespace GameManager
             // Editing object
             else
             {
-
+                EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
+                if (isForest)
+                {
+                    editCategoryLogic.editForest(initName, initArea, NameTextBox.Text, AreaTextBox.Text);
+                }
+                else
+                {
+                    editCategoryLogic.editDesert(initName, initArea, NameTextBox.Text, AreaTextBox.Text);
+                }
             }
 
         }
 
+        private void CheckingChanges_Tick(object sender, EventArgs e)
+        {
+            if (NameTextBox.Text == initName && AreaTextBox.Text == initArea && isEdit)
+            {
+                SaveButton.Enabled = false;
+            } else
+            {
+                SaveButton.Enabled = true;
+            }
+        }
     }
 }

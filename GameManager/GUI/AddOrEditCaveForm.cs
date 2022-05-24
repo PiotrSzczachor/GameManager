@@ -16,6 +16,9 @@ namespace GameManager.GUI
         Users currentlyLoggedUser;
         bool isEdit;
         string instance;
+        string initName;
+        string initArea;
+        string initDescription;
         public AddOrEditCaveForm(Users user, bool edit, string instance_)
         {
             InitializeComponent();
@@ -26,6 +29,10 @@ namespace GameManager.GUI
             {
                 EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
                 editCategoryLogic.fillCaveTextBoxes(NameTextBox, AreaTextBox, DescriptionTextBox);
+                initName = NameTextBox.Text;
+                initArea = AreaTextBox.Text;
+                initDescription = DescriptionTextBox.Text;
+                CheckingChanges.Enabled = true;
             }
         }
 
@@ -46,17 +53,40 @@ namespace GameManager.GUI
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            AddCategoryLogic addCategoryLogic = new AddCategoryLogic();
-            if (NameTextBox.Text != "" && AreaTextBox.Text != "" && DescriptionTextBox.Text != "")
+            // New instance
+            if (!isEdit)
             {
-                addCategoryLogic.addCave(NameTextBox.Text, Int32.Parse(AreaTextBox.Text), DescriptionTextBox.Text);
+                AddCategoryLogic addCategoryLogic = new AddCategoryLogic();
+                if (NameTextBox.Text != "" && AreaTextBox.Text != "" && DescriptionTextBox.Text != "")
+                {
+                    addCategoryLogic.addCave(NameTextBox.Text, Int32.Parse(AreaTextBox.Text), DescriptionTextBox.Text);
+                }
+                else
+                {
+                    MessageBox.Show("You need to fill all TextBoxes",
+                                        "Fill all TextBox",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                }
+            }
+            // Editing instance
+            else
+            {
+                EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
+                editCategoryLogic.editCave(initName, initArea, initDescription, NameTextBox.Text, AreaTextBox.Text, DescriptionTextBox.Text);
+            }
+ 
+        }
+
+        private void CheckingChanges_Tick(object sender, EventArgs e)
+        {
+            if (NameTextBox.Text == initName && AreaTextBox.Text == initArea && DescriptionTextBox.Text == initDescription && isEdit)
+            {
+                SaveButton.Enabled = false;
             }
             else
             {
-                MessageBox.Show("You need to fill all TextBoxes",
-                                    "Fill all TextBox",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                SaveButton.Enabled = true;
             }
         }
     }

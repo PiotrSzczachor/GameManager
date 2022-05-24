@@ -17,6 +17,9 @@ namespace GameManager.GUI
         bool isTemple;
         bool isEdit;
         string instance;
+        string initName;
+        string initNumber;
+        string initBuildYear;
         public AddOrEditTempleOrCastleForm(Users user, bool temple, bool edit, string instance_)
         {
             InitializeComponent();
@@ -35,6 +38,10 @@ namespace GameManager.GUI
             {
                 EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
                 editCategoryLogic.fillTempleOrCastleTextBoxes(NameTextBox, NumberTextBox, BuildYearTextBox, isTemple);
+                initName = NameTextBox.Text;
+                initNumber = NumberTextBox.Text;
+                initBuildYear = BuildYearTextBox.Text;
+                CheckingChanges.Enabled = true;
             }
 
             
@@ -90,10 +97,28 @@ namespace GameManager.GUI
             } else
             // Editing existing category
             {
-
+                EditCategoryLogic editCategoryLogic = new EditCategoryLogic(instance);
+                if (!isTemple)
+                {
+                    editCategoryLogic.editCastle(initName, initNumber, initBuildYear, NameTextBox.Text, NumberTextBox.Text, BuildYearTextBox.Text);
+                } else
+                {
+                    editCategoryLogic.editTemple(initName, initNumber, initBuildYear, NameTextBox.Text, NumberTextBox.Text, BuildYearTextBox.Text);
+                }
             }
             
         }
 
+        private void CheckingChanges_Tick(object sender, EventArgs e)
+        {
+            if (NameTextBox.Text == initName && NumberTextBox.Text == initNumber && BuildYearTextBox.Text == initBuildYear && isEdit)
+            {
+                SaveButton.Enabled = false;
+            }
+            else
+            {
+                SaveButton.Enabled = true;
+            }
+        }
     }
 }
