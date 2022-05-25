@@ -135,11 +135,5 @@ namespace GameManager
                 fillListBox(CategoriesListBox);
             }
         }
-
-
-        public void editForest()
-        {
-
-        }
     }
 }

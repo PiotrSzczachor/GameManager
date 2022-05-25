@@ -99,5 +99,83 @@ namespace GameManager.Logic
 
             }
         }
+
+        public void addItemToDb(string type, string name, string categoryInfo, int atribute1, int atribute2, int atribute3, int atribute4, int atribute5)
+        {
+            using (var db = new GameManagerContext())
+            {
+                string table = type + "s";
+                if (type == "Warewolf")
+                {
+                    table = "Warewolves";
+                }
+                if (type == "Witch")
+                {
+                    table = "Witches";
+                }
+                if (type == "Mummy")
+                {
+                    table = "Mummies";
+                }
+                string atributesString = db.Database.SqlQuery<string>("SELECT Atributes FROM ElementTypes WHERE Name='" + type + "'").FirstOrDefault();
+                string[] atributes = atributesString.Split(',');
+                string catType = categoryInfo.Split(new string[] { "  |  " }, StringSplitOptions.None).Last();
+                string catTable = catType.Split(' ').First() + "s";
+                var typeId = db.Database.SqlQuery<int?>("SELECT Id FROM ElementTypes WHERE Name='" + type + "'").FirstOrDefault();
+                int catID = Int32.Parse(catType.Split(' ').Last());
+                var check = db.Database.SqlQuery<int?>("SELECT Id FROM "+ table + " WHERE Name='" + name + "' AND " + atributes[0] + "=" + atribute1 +
+                                                        " AND " + atributes[1] + "=" + atribute2 + " AND " + atributes[2] + "=" + atribute3 +
+                                                        " AND " + atributes[3] + "=" + atribute4 + " AND " + atributes[4] + "=" + atribute5).FirstOrDefault();
+                if (check == null)
+                { 
+                    var atr1max = db.Database.SqlQuery<int?>("SELECT " + atributes[0] + " FROM " + table).ToList().Max();
+                    var atr2max = db.Database.SqlQuery<int?>("SELECT " + atributes[1] + " FROM " + table).ToList().Max();
+                    var atr3max = db.Database.SqlQuery<int?>("SELECT " + atributes[2] + " FROM " + table).ToList().Max();
+                    var atr4max = db.Database.SqlQuery<int?>("SELECT " + atributes[3] + " FROM " + table).ToList().Max();
+                    var atr5max = db.Database.SqlQuery<int?>("SELECT " + atributes[4] + " FROM " + table).ToList().Max();
+                    if(atr1max != null && atr2max != null && atr3max != null && atr4max != null && atr5max != null)
+                    {
+                        if ((int)atr1max < atribute1)
+                        {
+                            atribute1 = (int)atr1max;
+                        }
+                        if ((int)atr2max < atribute2)
+                        {
+                            atribute2 = (int)atr2max;
+                        }
+                        if ((int)atr3max < atribute3)
+                        {
+                            atribute3 = (int)atr3max;
+                        }
+                        if ((int)atr4max < atribute4)
+                        {
+                            atribute4 = (int)atr4max;
+                        }
+                        if ((int)atr4max < atribute4)
+                        {
+                            atribute1 = (int)atr1max;
+                        }
+                        if ((int)atr5max < atribute5)
+                        {
+                            atribute5 = (int)atr5max;
+                        }
+                    }
+                    db.Database.ExecuteSqlCommand("INSERT INTO " + table + " (Name," + atributes[0] + "," + atributes[1] + "," + atributes[2] +
+                                                  "," + atributes[3] + "," + atributes[4] + ", Category_Id, Type_Id) VALUES ('" + name + "'," + atribute1 + "," +
+                                                  atribute2 + "," + atribute3 + "," + atribute4 + "," + atribute5 + "," + catID + "," + typeId + ")");
+                    MessageBox.Show("New element added successfully",
+                                    "Success",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                } 
+                else
+                {
+                    MessageBox.Show("This element already exists",
+                                    "Element exists",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }

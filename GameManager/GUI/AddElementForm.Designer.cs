@@ -44,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TypeComboBox
@@ -71,42 +73,47 @@
             // FirstAtributeTextBox
             // 
             this.FirstAtributeTextBox.Enabled = false;
-            this.FirstAtributeTextBox.Location = new System.Drawing.Point(95, 74);
+            this.FirstAtributeTextBox.Location = new System.Drawing.Point(95, 100);
             this.FirstAtributeTextBox.Name = "FirstAtributeTextBox";
             this.FirstAtributeTextBox.Size = new System.Drawing.Size(121, 20);
             this.FirstAtributeTextBox.TabIndex = 2;
+            this.FirstAtributeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FirstAtributeTextBox_KeyPress);
             // 
             // SecondAtributeTextBox
             // 
             this.SecondAtributeTextBox.Enabled = false;
-            this.SecondAtributeTextBox.Location = new System.Drawing.Point(95, 100);
+            this.SecondAtributeTextBox.Location = new System.Drawing.Point(95, 126);
             this.SecondAtributeTextBox.Name = "SecondAtributeTextBox";
             this.SecondAtributeTextBox.Size = new System.Drawing.Size(121, 20);
             this.SecondAtributeTextBox.TabIndex = 3;
+            this.SecondAtributeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SecondAtributeTextBox_KeyPress);
             // 
             // ThirdAtributeTextBox
             // 
             this.ThirdAtributeTextBox.Enabled = false;
-            this.ThirdAtributeTextBox.Location = new System.Drawing.Point(95, 126);
+            this.ThirdAtributeTextBox.Location = new System.Drawing.Point(95, 152);
             this.ThirdAtributeTextBox.Name = "ThirdAtributeTextBox";
             this.ThirdAtributeTextBox.Size = new System.Drawing.Size(121, 20);
             this.ThirdAtributeTextBox.TabIndex = 4;
+            this.ThirdAtributeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ThirdAtributeTextBox_KeyPress);
             // 
             // FourthAtributeTextBox
             // 
             this.FourthAtributeTextBox.Enabled = false;
-            this.FourthAtributeTextBox.Location = new System.Drawing.Point(95, 152);
+            this.FourthAtributeTextBox.Location = new System.Drawing.Point(95, 178);
             this.FourthAtributeTextBox.Name = "FourthAtributeTextBox";
             this.FourthAtributeTextBox.Size = new System.Drawing.Size(121, 20);
             this.FourthAtributeTextBox.TabIndex = 5;
+            this.FourthAtributeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FourthAtributeTextBox_KeyPress);
             // 
             // FifthAtributeTextBox
             // 
             this.FifthAtributeTextBox.Enabled = false;
-            this.FifthAtributeTextBox.Location = new System.Drawing.Point(95, 178);
+            this.FifthAtributeTextBox.Location = new System.Drawing.Point(95, 204);
             this.FifthAtributeTextBox.Name = "FifthAtributeTextBox";
             this.FifthAtributeTextBox.Size = new System.Drawing.Size(121, 20);
             this.FifthAtributeTextBox.TabIndex = 6;
+            this.FifthAtributeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FifthAtributeTextBox_KeyPress);
             // 
             // label1
             // 
@@ -129,7 +136,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 77);
+            this.label3.Location = new System.Drawing.Point(12, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 9;
@@ -139,7 +146,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 103);
+            this.label4.Location = new System.Drawing.Point(12, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 10;
@@ -149,7 +156,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 129);
+            this.label5.Location = new System.Drawing.Point(12, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 11;
@@ -159,7 +166,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 155);
+            this.label6.Location = new System.Drawing.Point(12, 181);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 12;
@@ -169,7 +176,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 181);
+            this.label7.Location = new System.Drawing.Point(12, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 13;
@@ -194,12 +201,31 @@
             this.SaveButton.TabIndex = 15;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Name:";
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(95, 74);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.NameTextBox.TabIndex = 17;
             // 
             // AddElementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 288);
+            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label7);
@@ -242,5 +268,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox NameTextBox;
     }
 }
