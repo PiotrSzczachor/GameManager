@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBModels\ElementType.cs" />
     <Compile Include="GUI\AddOrEditCaveForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +137,7 @@
     <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\ElementsManagerLogic.cs" />
     <Compile Include="Logic\LoginLogic.cs" />
     <Compile Include="GUI\Menu.cs">
       <SubType>Form</SubType>
@@ -147,6 +149,22 @@
     <Compile Include="Migrations\202205212228584_Initial.cs" />
     <Compile Include="Migrations\202205212228584_Initial.designer.cs">
       <DependentUpon>202205212228584_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205242114549_AddedNewColumnsToElements.cs" />
+    <Compile Include="Migrations\202205242114549_AddedNewColumnsToElements.designer.cs">
+      <DependentUpon>202205242114549_AddedNewColumnsToElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205242202243_changedModel.cs" />
+    <Compile Include="Migrations\202205242202243_changedModel.designer.cs">
+      <DependentUpon>202205242202243_changedModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205242246291_goBack.cs" />
+    <Compile Include="Migrations\202205242246291_goBack.designer.cs">
+      <DependentUpon>202205242246291_goBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205242341137_ChangedElementsModels.cs" />
+    <Compile Include="Migrations\202205242341137_ChangedElementsModels.designer.cs">
+      <DependentUpon>202205242341137_ChangedElementsModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -209,6 +227,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205212228584_Initial.resx">
       <DependentUpon>202205212228584_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205242114549_AddedNewColumnsToElements.resx">
+      <DependentUpon>202205242114549_AddedNewColumnsToElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205242202243_changedModel.resx">
+      <DependentUpon>202205242202243_changedModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205242246291_goBack.resx">
+      <DependentUpon>202205242246291_goBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205242341137_ChangedElementsModels.resx">
+      <DependentUpon>202205242341137_ChangedElementsModels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager.DBModels;
+using GameManager.Logic;
 
 namespace GameManager
 {
@@ -80,6 +82,30 @@ namespace GameManager
                     db.Categories.Add(castle);
                     db.Categories.Add(cave);
                     db.Categories.Add(desert);
+                    db.SaveChanges();
+                }
+                if (db.ElementTypes.Count() == 0)
+                {
+                    List<ElementType> list = new List<ElementType>();
+                    list.Add(new ElementType { Name = "Alchemist", Atributes = "Healing,Inteligence,Support,Magica,Stamina" });
+                    list.Add(new ElementType { Name = "Archer", Atributes = "Accuracy,Inteligence,Speed,Armor,Focusing" });
+                    list.Add(new ElementType { Name = "Bat", Atributes = "Speed,Agility,Hearing,Magica,Stamina" });
+                    list.Add(new ElementType { Name = "Cobra", Atributes = "Virulence,Speed,Shell,Seeing,Agility" });
+                    list.Add(new ElementType { Name = "Dragon", Atributes = "Strength,Speed,Accuracy,Power,Magica" });
+                    list.Add(new ElementType { Name = "Ent", Atributes = "Strength,Brave,Musculature,Magica,Armor" });
+                    list.Add(new ElementType { Name = "Golem", Atributes = "Strength,Brave,Musculature,Magica,Armor" });
+                    list.Add(new ElementType { Name = "Knight", Atributes = "Strength,Stamina,Musculature,Brave,Armor" });
+                    list.Add(new ElementType { Name = "Mummy", Atributes = "Strength,Magica,Speed,Armor,Stamina" });
+                    list.Add(new ElementType { Name = "Scorpion", Atributes = "Virulence,Speed,Shell,Seeing,Agility" });
+                    list.Add(new ElementType { Name = "Spider", Atributes = "Virulence,Speed,Seeing,Magica,Armor" });
+                    list.Add(new ElementType { Name = "Warewolf", Atributes = "Strength,Brave,Musculature,Magica,Armor" });
+                    list.Add(new ElementType { Name = "Warrior", Atributes = "Strength,Stamina,Musculature,Brave,Armor" });
+                    list.Add(new ElementType { Name = "Witch", Atributes = "Power,Inteligence,Energy,Strength,Stamina" });
+                    list.Add(new ElementType { Name = "Wizzard", Atributes = "Power,Inteligence,Energy,Strength,Stamina" });
+                    foreach (ElementType type in list)
+                    {
+                        db.ElementTypes.Add(type);
+                    }
                     db.SaveChanges();
                 }
             }

@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameManager.DBModels;
 
 namespace GameManager
 {
@@ -13,7 +14,7 @@ namespace GameManager
         {
 
         }
-
+        public DbSet<ElementType> ElementTypes { get; set; }
         public DbSet<Forests> Forests { get; set; }
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Castles> Castles { get; set; }
@@ -37,6 +38,7 @@ namespace GameManager
         public DbSet<Mummy> Mummies { get; set; }
         public DbSet<Scorpion> Scorpions { get; set; }
         public DbSet<Cobra> Cobras { get; set; }
-
     }
+
+
 }

@@ -38,17 +38,19 @@
             // ElementsListBox
             // 
             this.ElementsListBox.FormattingEnabled = true;
-            this.ElementsListBox.ItemHeight = 20;
-            this.ElementsListBox.Location = new System.Drawing.Point(28, 87);
+            this.ElementsListBox.HorizontalScrollbar = true;
+            this.ElementsListBox.Location = new System.Drawing.Point(19, 57);
+            this.ElementsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.ElementsListBox.Name = "ElementsListBox";
-            this.ElementsListBox.Size = new System.Drawing.Size(730, 424);
+            this.ElementsListBox.Size = new System.Drawing.Size(829, 277);
             this.ElementsListBox.TabIndex = 0;
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(28, 533);
+            this.BackButton.Location = new System.Drawing.Point(200, 345);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(178, 60);
+            this.BackButton.Size = new System.Drawing.Size(119, 39);
             this.BackButton.TabIndex = 1;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -56,42 +58,47 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(212, 533);
+            this.EditButton.Location = new System.Drawing.Point(322, 345);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(178, 60);
+            this.EditButton.Size = new System.Drawing.Size(119, 39);
             this.EditButton.TabIndex = 2;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(396, 533);
+            this.DeleteButton.Location = new System.Drawing.Point(445, 345);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(178, 60);
+            this.DeleteButton.Size = new System.Drawing.Size(119, 39);
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(580, 533);
+            this.AddButton.Location = new System.Drawing.Point(568, 345);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(178, 60);
+            this.AddButton.Size = new System.Drawing.Size(119, 39);
             this.AddButton.TabIndex = 4;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             // 
             // ElementsManagerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 607);
+            this.ClientSize = new System.Drawing.Size(869, 395);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.ElementsListBox);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElementsManagerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ElementsManagerForm";
             this.ResumeLayout(false);
 
