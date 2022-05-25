@@ -33,13 +33,15 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.FiltersCheckBoxList = new System.Windows.Forms.CheckedListBox();
+            this.FilterButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ElementsListBox
             // 
             this.ElementsListBox.FormattingEnabled = true;
             this.ElementsListBox.HorizontalScrollbar = true;
-            this.ElementsListBox.Location = new System.Drawing.Point(19, 57);
+            this.ElementsListBox.Location = new System.Drawing.Point(11, 269);
             this.ElementsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.ElementsListBox.Name = "ElementsListBox";
             this.ElementsListBox.Size = new System.Drawing.Size(829, 277);
@@ -47,7 +49,7 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(200, 345);
+            this.BackButton.Location = new System.Drawing.Point(192, 557);
             this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(119, 39);
@@ -58,7 +60,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(322, 345);
+            this.EditButton.Location = new System.Drawing.Point(314, 557);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(119, 39);
@@ -68,7 +70,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(445, 345);
+            this.DeleteButton.Location = new System.Drawing.Point(437, 557);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(119, 39);
@@ -78,7 +80,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(568, 345);
+            this.AddButton.Location = new System.Drawing.Point(560, 557);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(119, 39);
@@ -86,11 +88,32 @@
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             // 
+            // FiltersCheckBoxList
+            // 
+            this.FiltersCheckBoxList.CheckOnClick = true;
+            this.FiltersCheckBoxList.FormattingEnabled = true;
+            this.FiltersCheckBoxList.Location = new System.Drawing.Point(334, 20);
+            this.FiltersCheckBoxList.Name = "FiltersCheckBoxList";
+            this.FiltersCheckBoxList.Size = new System.Drawing.Size(177, 199);
+            this.FiltersCheckBoxList.TabIndex = 5;
+            // 
+            // FilterButton
+            // 
+            this.FilterButton.Location = new System.Drawing.Point(365, 225);
+            this.FilterButton.Name = "FilterButton";
+            this.FilterButton.Size = new System.Drawing.Size(119, 39);
+            this.FilterButton.TabIndex = 6;
+            this.FilterButton.Text = "Filter";
+            this.FilterButton.UseVisualStyleBackColor = true;
+            this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
+            // 
             // ElementsManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 395);
+            this.ClientSize = new System.Drawing.Size(851, 616);
+            this.Controls.Add(this.FilterButton);
+            this.Controls.Add(this.FiltersCheckBoxList);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.EditButton);
@@ -111,5 +134,7 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.CheckedListBox FiltersCheckBoxList;
+        private System.Windows.Forms.Button FilterButton;
     }
 }

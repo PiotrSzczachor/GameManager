@@ -86,6 +86,24 @@ namespace GameManager
             }
         }
 
+        public void fillFiltersCheckBoxList(CheckedListBox checkedListBox)
+        {
+            foreach(string element in tablesNames)
+            {
+                checkedListBox.Items.Add(element);
+            }
+        }
+
+        public List<string> getFilters(CheckedListBox checkedListBox)
+        {
+            List<string> filters = new List<string>();
+            foreach(var item in checkedListBox.CheckedItems)
+            {
+                filters.Add(item.ToString());
+            }
+            return filters;
+        }
+
         
     }
 }

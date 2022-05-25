@@ -22,7 +22,10 @@ namespace GameManager.GUI
             EditButton.Enabled = false;
             DeleteButton.Enabled = false;
             ElementsManagerLogic elementsManagerLogic = new ElementsManagerLogic();
+            elementsManagerLogic.fillFiltersCheckBoxList(FiltersCheckBoxList);
             elementsManagerLogic.fillListBox(ElementsListBox, chosen, true);
+            chosen = elementsManagerLogic.getFilters(FiltersCheckBoxList);
+
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -30,6 +33,25 @@ namespace GameManager.GUI
             this.Hide();
             new Menu(currentlyLoggedUser).ShowDialog();
             this.Close();
+        }
+
+        private void FilterButton_Click(object sender, EventArgs e)
+        {
+            ElementsManagerLogic elementsManagerLogic = new ElementsManagerLogic();
+            chosen = elementsManagerLogic.getFilters(FiltersCheckBoxList);
+            foreach (String filter in chosen)
+            {
+                Console.WriteLine(filter);
+            }
+            ElementsListBox.Items.Clear();
+            if (chosen.Count != 0)
+            {
+                elementsManagerLogic.fillListBox(ElementsListBox, chosen, false);
+            } else
+            {
+                elementsManagerLogic.fillListBox(ElementsListBox, chosen, true);
+            }
+            
         }
     }
 }
