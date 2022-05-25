@@ -53,8 +53,9 @@
             this.TypeComboBox.Location = new System.Drawing.Point(95, 20);
             this.TypeComboBox.MaxDropDownItems = 20;
             this.TypeComboBox.Name = "TypeComboBox";
-            this.TypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.TypeComboBox.Size = new System.Drawing.Size(599, 21);
             this.TypeComboBox.TabIndex = 0;
+            this.TypeComboBox.SelectedIndexChanged += new System.EventHandler(this.TypeComboBox_SelectedIndexChanged);
             // 
             // CategoryComboBox
             // 
@@ -64,11 +65,12 @@
             this.CategoryComboBox.Location = new System.Drawing.Point(95, 47);
             this.CategoryComboBox.MaxDropDownItems = 20;
             this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.CategoryComboBox.Size = new System.Drawing.Size(599, 21);
             this.CategoryComboBox.TabIndex = 1;
             // 
             // FirstAtributeTextBox
             // 
+            this.FirstAtributeTextBox.Enabled = false;
             this.FirstAtributeTextBox.Location = new System.Drawing.Point(95, 74);
             this.FirstAtributeTextBox.Name = "FirstAtributeTextBox";
             this.FirstAtributeTextBox.Size = new System.Drawing.Size(121, 20);
@@ -76,6 +78,7 @@
             // 
             // SecondAtributeTextBox
             // 
+            this.SecondAtributeTextBox.Enabled = false;
             this.SecondAtributeTextBox.Location = new System.Drawing.Point(95, 100);
             this.SecondAtributeTextBox.Name = "SecondAtributeTextBox";
             this.SecondAtributeTextBox.Size = new System.Drawing.Size(121, 20);
@@ -83,6 +86,7 @@
             // 
             // ThirdAtributeTextBox
             // 
+            this.ThirdAtributeTextBox.Enabled = false;
             this.ThirdAtributeTextBox.Location = new System.Drawing.Point(95, 126);
             this.ThirdAtributeTextBox.Name = "ThirdAtributeTextBox";
             this.ThirdAtributeTextBox.Size = new System.Drawing.Size(121, 20);
@@ -90,6 +94,7 @@
             // 
             // FourthAtributeTextBox
             // 
+            this.FourthAtributeTextBox.Enabled = false;
             this.FourthAtributeTextBox.Location = new System.Drawing.Point(95, 152);
             this.FourthAtributeTextBox.Name = "FourthAtributeTextBox";
             this.FourthAtributeTextBox.Size = new System.Drawing.Size(121, 20);
@@ -97,6 +102,7 @@
             // 
             // FifthAtributeTextBox
             // 
+            this.FifthAtributeTextBox.Enabled = false;
             this.FifthAtributeTextBox.Location = new System.Drawing.Point(95, 178);
             this.FifthAtributeTextBox.Name = "FifthAtributeTextBox";
             this.FifthAtributeTextBox.Size = new System.Drawing.Size(121, 20);
@@ -172,7 +178,7 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(15, 204);
+            this.BackButton.Location = new System.Drawing.Point(254, 240);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(93, 36);
             this.BackButton.TabIndex = 14;
@@ -182,7 +188,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(123, 204);
+            this.SaveButton.Location = new System.Drawing.Point(362, 240);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(93, 36);
             this.SaveButton.TabIndex = 15;
@@ -193,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 252);
+            this.ClientSize = new System.Drawing.Size(706, 288);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label7);

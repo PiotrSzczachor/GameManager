@@ -126,6 +126,14 @@ namespace GameManager
             {
                 table = "Warewolves";
             }
+            if (elementName == "Witch")
+            {
+                table = "Witches";
+            }
+            if (elementName == "Mummy")
+            {
+                table = "Mummies";
+            }
             using (var db = new GameManagerContext())
             {
                 db.Database.ExecuteSqlCommand("DELETE FROM " + table + " WHERE ID=" + elementID);
@@ -136,7 +144,20 @@ namespace GameManager
         {
             foreach (string element in tablesNames)
             {
-                typesComboBox.Items.Add(element);
+                string el = element.Remove(element.Length - 1);
+                if (element == "Warewolves")
+                {
+                    el = "Warewolf";
+                }
+                if (element == "Witches")
+                {
+                    el = "Witch";
+                }
+                if (element == "Mummies")
+                {
+                    el = "Mummy";
+                }
+                typesComboBox.Items.Add(el);
             }
         }
         
