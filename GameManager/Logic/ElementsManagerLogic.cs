@@ -77,7 +77,7 @@ namespace GameManager
                             string elementInfo = "Type: " + type + "  |  Name: " + elementsNames[i] + "  |  " + atributesNames[0] + ": " + atributesValues[0] +
                                                  "  |  " + atributesNames[1] + ": " + atributesValues[1] + "  |  " + atributesNames[2] + ": " + atributesValues[2] +
                                                  "  |  " + atributesNames[3] + ": " + atributesValues[3] + "  |  " + atributesNames[4] + ": " + atributesValues[4] +
-                                                 "  |  Category: " + categoryName;
+                                                 "  |  Category: " + categoryName + "  |  " + type + "ID: " + elementsIds[i];
                             ElementsListBox.Items.Add(elementInfo);
                         }
                     }
@@ -114,6 +114,21 @@ namespace GameManager
             else
             {
                 fillListBox(ElementsListBox, chosen, true);
+            }
+        }
+
+        public void deleteElement(string elementInfo)
+        {
+            string elementName = elementInfo.Split(new string[] { "  |  " }, StringSplitOptions.None)[0].Replace("Type: ", "");
+            string elementID = elementInfo.Split(new string[] { "  |  " }, StringSplitOptions.None)[8].Replace(elementName+"ID: ", "");
+            string table = elementName + "s";
+            if (elementName == "Warewolf")
+            {
+                table = "Warewolves";
+            }
+            using (var db = new GameManagerContext())
+            {
+                db.Database.ExecuteSqlCommand("DELETE FROM " + table + " WHERE ID=" + elementID);
             }
         }
         

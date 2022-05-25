@@ -56,7 +56,6 @@ namespace GameManager.GUI
             if (ElementsListBox.SelectedItem != null)
             {
                 selectedElementInfo = ElementsListBox.SelectedItem.ToString();
-                Console.WriteLine(selectedElementInfo);
             }
         }
 
@@ -69,6 +68,22 @@ namespace GameManager.GUI
             ElementsListBox.Items.Clear();
             ElementsManagerLogic elementsManagerLogic = new ElementsManagerLogic();
             elementsManagerLogic.fillListBox(ElementsListBox, chosen, true);
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            ElementsManagerLogic elementsManagerLogic = new ElementsManagerLogic();
+            elementsManagerLogic.deleteElement(ElementsListBox.SelectedItem.ToString());
+            ElementsListBox.Items.Clear();
+            if (chosen.Count() == 0)
+            {
+                elementsManagerLogic.fillListBox(ElementsListBox, chosen, true);
+            } else
+            {
+                elementsManagerLogic.fillListBox(ElementsListBox, chosen, false);
+            }
+            EditButton.Enabled = false;
+            DeleteButton.Enabled = false;
         }
     }
 }
