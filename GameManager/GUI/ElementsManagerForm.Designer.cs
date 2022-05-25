@@ -35,6 +35,7 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.FiltersCheckBoxList = new System.Windows.Forms.CheckedListBox();
             this.FilterButton = new System.Windows.Forms.Button();
+            this.ResetFiltersButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ElementsListBox
@@ -46,6 +47,7 @@
             this.ElementsListBox.Name = "ElementsListBox";
             this.ElementsListBox.Size = new System.Drawing.Size(829, 277);
             this.ElementsListBox.TabIndex = 0;
+            this.ElementsListBox.SelectedIndexChanged += new System.EventHandler(this.ElementsListBox_SelectedIndexChanged);
             // 
             // BackButton
             // 
@@ -99,19 +101,30 @@
             // 
             // FilterButton
             // 
-            this.FilterButton.Location = new System.Drawing.Point(365, 225);
+            this.FilterButton.Location = new System.Drawing.Point(334, 225);
             this.FilterButton.Name = "FilterButton";
-            this.FilterButton.Size = new System.Drawing.Size(119, 39);
+            this.FilterButton.Size = new System.Drawing.Size(84, 39);
             this.FilterButton.TabIndex = 6;
             this.FilterButton.Text = "Filter";
             this.FilterButton.UseVisualStyleBackColor = true;
             this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
+            // 
+            // ResetFiltersButton
+            // 
+            this.ResetFiltersButton.Location = new System.Drawing.Point(424, 225);
+            this.ResetFiltersButton.Name = "ResetFiltersButton";
+            this.ResetFiltersButton.Size = new System.Drawing.Size(87, 39);
+            this.ResetFiltersButton.TabIndex = 7;
+            this.ResetFiltersButton.Text = "Reset filters";
+            this.ResetFiltersButton.UseVisualStyleBackColor = true;
+            this.ResetFiltersButton.Click += new System.EventHandler(this.ResetFiltersButton_Click);
             // 
             // ElementsManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 616);
+            this.Controls.Add(this.ResetFiltersButton);
             this.Controls.Add(this.FilterButton);
             this.Controls.Add(this.FiltersCheckBoxList);
             this.Controls.Add(this.AddButton);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.CheckedListBox FiltersCheckBoxList;
         private System.Windows.Forms.Button FilterButton;
+        private System.Windows.Forms.Button ResetFiltersButton;
     }
 }

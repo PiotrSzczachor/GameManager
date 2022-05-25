@@ -104,6 +104,18 @@ namespace GameManager
             return filters;
         }
 
+        public void filter(List<string> chosen, ListBox ElementsListBox)
+        {
+            ElementsListBox.Items.Clear();
+            if (chosen.Count != 0)
+            {
+                fillListBox(ElementsListBox, chosen, false);
+            }
+            else
+            {
+                fillListBox(ElementsListBox, chosen, true);
+            }
+        }
         
     }
 }

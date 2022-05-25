@@ -15,6 +15,7 @@ namespace GameManager.GUI
     {
         Users currentlyLoggedUser;
         List<String> chosen = new List<String>();
+        string selectedElementInfo;
         public ElementsManagerForm(Users user)
         {
             InitializeComponent();
@@ -39,19 +40,35 @@ namespace GameManager.GUI
         {
             ElementsManagerLogic elementsManagerLogic = new ElementsManagerLogic();
             chosen = elementsManagerLogic.getFilters(FiltersCheckBoxList);
-            foreach (String filter in chosen)
+            elementsManagerLogic.filter(chosen, ElementsListBox);
+            EditButton.Enabled = false;
+            DeleteButton.Enabled = false;
+            
+        }
+
+        private void ElementsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ElementsListBox.SelectedIndex >= 0)
             {
-                Console.WriteLine(filter);
+                DeleteButton.Enabled = true;
+                EditButton.Enabled = true;
+            }
+            if (ElementsListBox.SelectedItem != null)
+            {
+                selectedElementInfo = ElementsListBox.SelectedItem.ToString();
+                Console.WriteLine(selectedElementInfo);
+            }
+        }
+
+        private void ResetFiltersButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < FiltersCheckBoxList.Items.Count; i++)
+            {
+                FiltersCheckBoxList.SetItemChecked(i, false);
             }
             ElementsListBox.Items.Clear();
-            if (chosen.Count != 0)
-            {
-                elementsManagerLogic.fillListBox(ElementsListBox, chosen, false);
-            } else
-            {
-                elementsManagerLogic.fillListBox(ElementsListBox, chosen, true);
-            }
-            
+            ElementsManagerLogic elementsManagerLogic = new ElementsManagerLogic();
+            elementsManagerLogic.fillListBox(ElementsListBox, chosen, true);
         }
     }
 }
