@@ -81,5 +81,23 @@ namespace GameManager.Logic
                 }
             }
         }
+
+        public void fillLabels(Label FirstAtributeLabel, Label SecondAtributeLabel, Label ThirdAtributeLabel, Label FourthLabelAtribute, Label FifthLabelAtribute, string type)
+        {
+            using (var db = new GameManagerContext())
+            {
+                string atributesString = db.Database.SqlQuery<string>("SELECT Atributes FROM ElementTypes WHERE Name='"+type+"'").FirstOrDefault();
+                string[] atributes = atributesString.Split(',');
+                List<Label> labels = new List<Label> { FirstAtributeLabel, SecondAtributeLabel, ThirdAtributeLabel, FourthLabelAtribute, FifthLabelAtribute};
+                int i = 0;
+                foreach (var label in labels)
+                {
+                    label.Text = atributes[i];
+                    label.Visible = true;
+                    i++;
+                }
+
+            }
+        }
     }
 }

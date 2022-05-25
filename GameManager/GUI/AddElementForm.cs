@@ -35,6 +35,7 @@ namespace GameManager
             AddElementLogic addElementLogic = new AddElementLogic();
             CategoryComboBox.Items.Clear();
             addElementLogic.fillCategoriesComboBox(TypeComboBox.SelectedItem.ToString(), CategoryComboBox);
+            addElementLogic.fillLabels(label3, label4, label5, label6, label7, TypeComboBox.SelectedItem.ToString());
             CategoryComboBox.Enabled = true;
         }
     }
