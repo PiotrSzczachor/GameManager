@@ -131,6 +131,14 @@ namespace GameManager
                 db.Database.ExecuteSqlCommand("DELETE FROM " + table + " WHERE ID=" + elementID);
             }
         }
+
+        public void fillTypesComboBox(ComboBox typesComboBox)
+        {
+            foreach (string element in tablesNames)
+            {
+                typesComboBox.Items.Add(element);
+            }
+        }
         
     }
 }

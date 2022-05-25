@@ -85,5 +85,12 @@ namespace GameManager.GUI
             EditButton.Enabled = false;
             DeleteButton.Enabled = false;
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddElementForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }
