@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CategoriesListBox = new System.Windows.Forms.ListBox();
             this.AddNewForestButton = new System.Windows.Forms.Button();
             this.AddNewTempleButton = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             this.cavesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.desertsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ResetFiltersButton = new System.Windows.Forms.Button();
+            this.PermissionsTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -207,6 +209,11 @@
             this.ResetFiltersButton.UseVisualStyleBackColor = true;
             this.ResetFiltersButton.Click += new System.EventHandler(this.ResetFiltersButton_Click);
             // 
+            // PermissionsTimer
+            // 
+            this.PermissionsTimer.Interval = 1;
+            this.PermissionsTimer.Tick += new System.EventHandler(this.PermissionsTimer_Tick);
+            // 
             // CategoriesManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,5 +260,6 @@
         private System.Windows.Forms.ToolStripMenuItem cavesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem desertsToolStripMenuItem;
         private System.Windows.Forms.Button ResetFiltersButton;
+        private System.Windows.Forms.Timer PermissionsTimer;
     }
 }

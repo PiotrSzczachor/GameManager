@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UsersListLabel = new System.Windows.Forms.Label();
             this.UsersListBox = new System.Windows.Forms.ListBox();
             this.BackButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddNewUserButton = new System.Windows.Forms.Button();
+            this.PermissionsTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UsersListLabel
@@ -95,6 +97,11 @@
             this.AddNewUserButton.UseVisualStyleBackColor = true;
             this.AddNewUserButton.Click += new System.EventHandler(this.AddNewUserButton_Click);
             // 
+            // PermissionsTimer
+            // 
+            this.PermissionsTimer.Interval = 1;
+            this.PermissionsTimer.Tick += new System.EventHandler(this.PermissionsTimer_Tick);
+            // 
             // UsersPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +129,6 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button AddNewUserButton;
+        private System.Windows.Forms.Timer PermissionsTimer;
     }
 }

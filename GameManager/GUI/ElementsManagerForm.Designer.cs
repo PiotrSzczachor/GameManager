@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ElementsListBox = new System.Windows.Forms.ListBox();
             this.BackButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.FiltersCheckBoxList = new System.Windows.Forms.CheckedListBox();
             this.FilterButton = new System.Windows.Forms.Button();
             this.ResetFiltersButton = new System.Windows.Forms.Button();
+            this.PermissionTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // ElementsListBox
@@ -121,6 +123,11 @@
             this.ResetFiltersButton.UseVisualStyleBackColor = true;
             this.ResetFiltersButton.Click += new System.EventHandler(this.ResetFiltersButton_Click);
             // 
+            // PermissionTimer
+            // 
+            this.PermissionTimer.Interval = 1;
+            this.PermissionTimer.Tick += new System.EventHandler(this.PermissionTimer_Tick);
+            // 
             // ElementsManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,5 +159,6 @@
         private System.Windows.Forms.CheckedListBox FiltersCheckBoxList;
         private System.Windows.Forms.Button FilterButton;
         private System.Windows.Forms.Button ResetFiltersButton;
+        private System.Windows.Forms.Timer PermissionTimer;
     }
 }

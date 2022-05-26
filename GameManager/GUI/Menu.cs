@@ -18,6 +18,7 @@ namespace GameManager
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            PermissionTimer.Enabled = true;
             LoggedUserLabel.Text = "You are currently logged as " + user.Username;
         }
 
@@ -54,6 +55,34 @@ namespace GameManager
         {
             this.Hide();
             new ElementsManagerForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
+
+        private void PermissionTimer_Tick(object sender, EventArgs e)
+        {
+            var perm = currentlyLoggedUser.Role;
+            if(!perm.DeleteUsers && !perm.AddUsers && !perm.EdidUsers)
+            {
+                UsersButton.Enabled = false;
+            }
+            if(!perm.AddElements && !perm.EditElements && !perm.DeleteElements)
+            {
+                ElementsButton.Enabled = false;
+            }
+            if(!perm.AddForests && !perm.AddTemples && !perm.AddCastles && !perm.AddCaves && !perm.AddDeserts && !perm.EditCategories && !perm.DeleteCategories)
+            {
+                CategoriesButton.Enabled = false;
+            }
+            if(!perm.AddRoles && !perm.EditRoles && !perm.DeleteRoles)
+            {
+                RolesButton.Enabled = false;
+            }
+        }
+
+        private void RolesButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RolesManagerForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
     }

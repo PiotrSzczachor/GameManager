@@ -21,6 +21,7 @@ namespace GameManager
             EditButton.Enabled = false;
             DeleteButton.Enabled = false;
             currentlyLoggedUser = user;
+            PermissionsTimer.Enabled = true;
             CategoriesManagerLogic categoriesManagerLogic = new CategoriesManagerLogic();
             categoriesManagerLogic.fillListBox(CategoriesListBox);
         }
@@ -216,6 +217,39 @@ namespace GameManager
                 this.Hide();
                 new AddOrEditCaveForm(currentlyLoggedUser, true, selected).ShowDialog();
                 this.Close();
+            }
+        }
+
+        private void PermissionsTimer_Tick(object sender, EventArgs e)
+        {
+            var perm = currentlyLoggedUser.Role;
+            if (!perm.AddForests)
+            {
+                AddNewForestButton.Enabled = false;
+            }
+            if (!perm.AddTemples)
+            {
+                AddNewTempleButton.Enabled = false;
+            }
+            if (!perm.AddCastles)
+            {
+                AddNewCastleButton.Enabled = false;
+            }
+            if (!perm.AddCaves)
+            {
+                AddNewCaveButton.Enabled = false;
+            }
+            if (!perm.AddDeserts)
+            {
+                AddNewDesertButton.Enabled = false;
+            }
+            if (!perm.EditCategories)
+            {
+                EditButton.Enabled = false;
+            }
+            if (!perm.DeleteCategories)
+            {
+                DeleteButton.Enabled = false;
             }
         }
     }

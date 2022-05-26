@@ -18,6 +18,7 @@ namespace GameManager
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            PermissionsTimer.Enabled = true;
             DeleteButton.Enabled = false;
             EditButton.Enabled = false;
             UsersPanelLogic usersPanelLogic = new UsersPanelLogic();
@@ -61,6 +62,23 @@ namespace GameManager
             if (UsersListBox.SelectedItem != null)
             {
                 selectedUsername = UsersListBox.SelectedItem.ToString().Split(':')[1].Replace(" ", "");
+            }
+        }
+
+        private void PermissionsTimer_Tick(object sender, EventArgs e)
+        {
+            var perm = currentlyLoggedUser.Role;
+            if (!perm.AddUsers)
+            {
+                AddNewUserButton.Enabled = false;
+            }
+            if (!perm.EdidUsers)
+            {
+                EditButton.Enabled = false;
+            }
+            if (!perm.DeleteUsers)
+            {
+                DeleteButton.Enabled = false;
             }
         }
     }

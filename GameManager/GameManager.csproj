@@ -63,6 +63,12 @@
       <DependentUpon>AddElementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DBModels\ElementType.cs" />
+    <Compile Include="GUI\AddNewRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddNewRoleForm.Designer.cs">
+      <DependentUpon>AddNewRoleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\AddOrEditCaveForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     <Compile Include="GUI\ElementsManagerForm.Designer.cs">
       <DependentUpon>ElementsManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\RolesManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RolesManagerForm.Designer.cs">
+      <DependentUpon>RolesManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\AccountInfoLogic.cs" />
     <Compile Include="GUI\AddNewUserForm.cs">
       <SubType>Form</SubType>
@@ -113,6 +125,7 @@
     </Compile>
     <Compile Include="Logic\AddCategoryLogic.cs" />
     <Compile Include="Logic\AddElementLogic.cs" />
+    <Compile Include="Logic\AddRoleLogic.cs" />
     <Compile Include="Logic\CategoriesManagerLogic.cs" />
     <Compile Include="GUI\ChangePasswordForm.cs">
       <SubType>Form</SubType>
@@ -153,6 +166,7 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="DBModels\Mummy.cs" />
+    <Compile Include="Logic\RolesManagerLogic.cs" />
     <Compile Include="Migrations\202205212228584_Initial.cs" />
     <Compile Include="Migrations\202205212228584_Initial.designer.cs">
       <DependentUpon>202205212228584_Initial.cs</DependentUpon>
@@ -172,6 +186,18 @@
     <Compile Include="Migrations\202205242341137_ChangedElementsModels.cs" />
     <Compile Include="Migrations\202205242341137_ChangedElementsModels.designer.cs">
       <DependentUpon>202205242341137_ChangedElementsModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205252355102_changedRolesModel.cs" />
+    <Compile Include="Migrations\202205252355102_changedRolesModel.designer.cs">
+      <DependentUpon>202205252355102_changedRolesModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205260001598_changedRolesModel2.cs" />
+    <Compile Include="Migrations\202205260001598_changedRolesModel2.designer.cs">
+      <DependentUpon>202205260001598_changedRolesModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205260034001_changedRolesModel3.cs" />
+    <Compile Include="Migrations\202205260034001_changedRolesModel3.designer.cs">
+      <DependentUpon>202205260034001_changedRolesModel3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -201,6 +227,9 @@
     <Compile Include="DBModels\Wizzard.cs" />
     <EmbeddedResource Include="GUI\AddElementForm.resx">
       <DependentUpon>AddElementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddNewRoleForm.resx">
+      <DependentUpon>AddNewRoleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AddOrEditCaveForm.resx">
       <DependentUpon>AddOrEditCaveForm.cs</DependentUpon>
@@ -235,6 +264,9 @@
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RolesManagerForm.resx">
+      <DependentUpon>RolesManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205212228584_Initial.resx">
       <DependentUpon>202205212228584_Initial.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +281,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205242341137_ChangedElementsModels.resx">
       <DependentUpon>202205242341137_ChangedElementsModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205252355102_changedRolesModel.resx">
+      <DependentUpon>202205252355102_changedRolesModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205260001598_changedRolesModel2.resx">
+      <DependentUpon>202205260001598_changedRolesModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205260034001_changedRolesModel3.resx">
+      <DependentUpon>202205260034001_changedRolesModel3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

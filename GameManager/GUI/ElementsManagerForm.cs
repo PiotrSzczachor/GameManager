@@ -20,6 +20,7 @@ namespace GameManager.GUI
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            PermissionTimer.Enabled = true;
             EditButton.Enabled = false;
             DeleteButton.Enabled = false;
             ElementsManagerLogic elementsManagerLogic = new ElementsManagerLogic();
@@ -91,6 +92,23 @@ namespace GameManager.GUI
             this.Hide();
             new AddElementForm(currentlyLoggedUser).ShowDialog();
             this.Close();
+        }
+
+        private void PermissionTimer_Tick(object sender, EventArgs e)
+        {
+            var perm = currentlyLoggedUser.Role;
+            if (!perm.AddElements)
+            {
+                AddButton.Enabled = false;
+            }
+            if (!perm.EditElements)
+            {
+                EditButton.Enabled = false;
+            }
+            if (!perm.DeleteElements)
+            {
+                DeleteButton.Enabled = false;
+            }
         }
     }
 }

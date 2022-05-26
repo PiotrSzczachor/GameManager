@@ -64,8 +64,40 @@ namespace GameManager
             {
                 if (db.Roles.Count() == 0)
                 {
-                    Roles adminRole = new Roles { Name = "Admin" };
-                    Roles userRole = new Roles { Name = "User" };
+                    Roles adminRole = new Roles { Name = "Admin",
+                                                AddForests = false,
+                                                AddTemples = false,
+                                                AddCastles = false,
+                                                AddCaves = false,
+                                                AddDeserts = false,
+                                                DeleteCategories = false,
+                                                EditCategories = false,
+                                                AddElements = false,
+                                                DeleteElements = false,
+                                                EditElements = false,
+                                                AddRoles = true,
+                                                EditRoles = true,
+                                                DeleteRoles = true,
+                                                AddUsers = true,
+                                                DeleteUsers = true
+                                            };
+                    Roles userRole = new Roles { Name = "User",
+                                                AddForests = true,
+                                                AddTemples = true,
+                                                AddCastles = true,
+                                                AddCaves = true,
+                                                AddDeserts = true,
+                                                DeleteCategories = true,
+                                                EditCategories = true,
+                                                AddElements = true,
+                                                DeleteElements = true,
+                                                EditElements = true,
+                                                AddRoles = false,
+                                                EditRoles = false,
+                                                DeleteRoles = false,
+                                                AddUsers = false,
+                                                DeleteUsers = false
+                                            };
                     db.Roles.Add(adminRole);
                     db.Roles.Add(userRole);
                     db.SaveChanges();
