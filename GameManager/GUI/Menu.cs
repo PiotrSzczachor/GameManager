@@ -31,7 +31,6 @@ namespace GameManager
 
         private void LogOutButton_Click(object sender, EventArgs e)
         {
-            currentlyLoggedUser = null;
             this.Hide();
             new LoginForm().ShowDialog();
             this.Close();

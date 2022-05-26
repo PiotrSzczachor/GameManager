@@ -53,7 +53,7 @@ namespace GameManager.GUI
         private void AddButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddNewRoleForm(currentlyLoggedUser).ShowDialog();
+            new AddNewRoleForm(currentlyLoggedUser, "", false).ShowDialog();
             this.Close();
         }
 
@@ -69,8 +69,9 @@ namespace GameManager.GUI
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            string name = chosen.Split(new string[] { "  |  " }, StringSplitOptions.None)[0].Replace("Name: ", "");
             this.Hide();
-            new AddNewRoleForm(currentlyLoggedUser).ShowDialog();
+            new AddNewRoleForm(currentlyLoggedUser, name, true).ShowDialog();
             this.Close();
         }
 

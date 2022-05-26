@@ -15,10 +15,18 @@ namespace GameManager.GUI
     {
         Users currentlyLoggedUser;
         List<string> chosen = new List<string> ();
-        public AddNewRoleForm(Users user)
+        string name;
+        bool isEdit;
+        public AddNewRoleForm(Users user, string name_, bool edit)
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            name = name_;
+            isEdit = edit;
+            if (isEdit)
+            {
+                NameTextBox.Text = name_;
+            }
             AddRoleLogic addRoleLogic = new AddRoleLogic();
             addRoleLogic.fillCheckedList(checkedListBox1);
         }
@@ -39,7 +47,7 @@ namespace GameManager.GUI
             AddRoleLogic addRoleLogic = new AddRoleLogic();
             if(NameTextBox.Text != "")
             {
-                addRoleLogic.addRole(chosen, NameTextBox.Text);
+                addRoleLogic.addRole(chosen, NameTextBox.Text, isEdit, name);
             } else
             {
                 MessageBox.Show("You need to name new role.",
