@@ -13,8 +13,10 @@ namespace GameManager
     {
         public void verifyLoginAndPassword(TextBox UsernameBox, TextBox PasswordBox, LoginForm form)
         {
+            EncryptPassword encryptPassword = new EncryptPassword();
             string username = UsernameBox.Text;
-            string password = PasswordBox.Text;
+            string pass = PasswordBox.Text;
+            string password = encryptPassword.encode(pass);
             using (var db = new GameManagerContext())
             {
                 bool isUserInDb = false;

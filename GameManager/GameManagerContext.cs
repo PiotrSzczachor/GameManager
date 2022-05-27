@@ -38,7 +38,7 @@ namespace GameManager
         public DbSet<Mummy> Mummies { get; set; }
         public DbSet<Scorpion> Scorpions { get; set; }
         public DbSet<Cobra> Cobras { get; set; }
+
+
     }
-
-
 }

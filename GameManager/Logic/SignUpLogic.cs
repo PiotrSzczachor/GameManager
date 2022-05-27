@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.DataAnnotations;
+using GameManager.Logic;
 
 namespace GameManager
 {
@@ -13,8 +14,10 @@ namespace GameManager
         public void createNewUser(TextBox UsernameBox, TextBox PasswordBox, TextBox EmailBox, Timer RedirectTimer, SignUpForm form,
             Label time, Button CancelButton, Button ResetButton, Button SignUpButton, bool redirect)
         {
+            EncryptPassword encryptPassword = new EncryptPassword();
             string username = UsernameBox.Text;
-            string password = PasswordBox.Text;
+            string pass = PasswordBox.Text;
+            string password = encryptPassword.encode(pass);
             string email = EmailBox.Text;
             if(username != "" && password != "" && email != "")
             {

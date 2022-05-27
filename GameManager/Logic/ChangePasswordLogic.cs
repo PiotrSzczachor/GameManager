@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager.Logic;
 
 namespace GameManager
 {
@@ -11,14 +12,15 @@ namespace GameManager
     {
         public void changePassword(Users user, TextBox OldPasswordBox, TextBox NewPasswordBox, Timer RedirectTimer, Label time, ChangePasswordForm form)
         {
+            EncryptPassword encryptPassword = new EncryptPassword();
             using (var db = new GameManagerContext())
             {
                 if (OldPasswordBox.Text != "" && NewPasswordBox.Text != "")
                 {
-                    if (OldPasswordBox.Text == user.Password)
+                    if (encryptPassword.encode(OldPasswordBox.Text) == user.Password)
                     {
                         var dbUser = db.Users.SingleOrDefault(u => u.Username == user.Username);
-                        dbUser.Password = NewPasswordBox.Text;
+                        dbUser.Password = encryptPassword.encode(NewPasswordBox.Text);
                         db.SaveChanges();
                         RedirectTimer.Enabled = true;
                         RedirectTimer.Start();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager.Logic;
 
 namespace GameManager
 {
@@ -16,7 +17,7 @@ namespace GameManager
         {
             InitializeComponent();
             LoginLogic loginLogic = new LoginLogic();
-            loginLogic.init();
+            loginLogic.init();         
         }
 
         private void Form1_Load(object sender, EventArgs e)
