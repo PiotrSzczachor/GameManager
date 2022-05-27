@@ -126,7 +126,6 @@ namespace GameManager.Logic
                         }
                     } else
                     {
-                        Console.WriteLine(initQuery);
                         db.Database.ExecuteSqlCommand(initQuery);
                         db.Database.ExecuteSqlCommand(updateQuery);
                         MessageBox.Show("Role was edited successfully",
