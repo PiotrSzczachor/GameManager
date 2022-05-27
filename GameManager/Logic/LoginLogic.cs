@@ -81,7 +81,8 @@ namespace GameManager
                                                 EditRoles = true,
                                                 DeleteRoles = true,
                                                 AddUsers = true,
-                                                DeleteUsers = true
+                                                DeleteUsers = true,
+                                                EdidUsers = true,
                                             };
                     Roles userRole = new Roles { Name = "User",
                                                 AddForests = true,
@@ -98,7 +99,8 @@ namespace GameManager
                                                 EditRoles = false,
                                                 DeleteRoles = false,
                                                 AddUsers = false,
-                                                DeleteUsers = false
+                                                DeleteUsers = false,
+                                                EdidUsers = false,
                                             };
                     db.Roles.Add(adminRole);
                     db.Roles.Add(userRole);

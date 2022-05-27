@@ -32,6 +32,11 @@ namespace GameManager.Logic
             {
                 var role = db.Roles.SingleOrDefault(r => r.Id==id);
                 db.Roles.Remove(role);
+                var usersWithoutRole = db.Users.Where(r => r.Role == null);
+                foreach (var user in usersWithoutRole)
+                {
+                    db.Users.Remove(user);
+                }
                 db.SaveChanges();
             }
         }

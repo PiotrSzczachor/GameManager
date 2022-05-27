@@ -200,6 +200,18 @@
     <Compile Include="Migrations\202205260034001_changedRolesModel3.designer.cs">
       <DependentUpon>202205260034001_changedRolesModel3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205271618489_Cascade.cs" />
+    <Compile Include="Migrations\202205271618489_Cascade.designer.cs">
+      <DependentUpon>202205271618489_Cascade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205271620211_Cascade2.cs" />
+    <Compile Include="Migrations\202205271620211_Cascade2.designer.cs">
+      <DependentUpon>202205271620211_Cascade2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205271630335_AllTablesCascade.cs" />
+    <Compile Include="Migrations\202205271630335_AllTablesCascade.designer.cs">
+      <DependentUpon>202205271630335_AllTablesCascade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +303,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205260034001_changedRolesModel3.resx">
       <DependentUpon>202205260034001_changedRolesModel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205271618489_Cascade.resx">
+      <DependentUpon>202205271618489_Cascade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205271620211_Cascade2.resx">
+      <DependentUpon>202205271620211_Cascade2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205271630335_AllTablesCascade.resx">
+      <DependentUpon>202205271630335_AllTablesCascade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

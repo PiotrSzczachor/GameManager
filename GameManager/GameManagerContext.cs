@@ -39,6 +39,87 @@ namespace GameManager
         public DbSet<Scorpion> Scorpions { get; set; }
         public DbSet<Cobra> Cobras { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Users>()
+            .HasOptional<Roles>(s => s.Role)
+            .WithMany()
+            .WillCascadeOnDelete(true);
 
+            modelBuilder.Entity<Alchemist>()
+            .HasOptional<Temple>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Wizzard>()
+            .HasOptional<Temple>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Witch>()
+            .HasOptional<Temple>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Warewolf>()
+            .HasOptional<Forests>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Ent>()
+            .HasOptional<Forests>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Spider>()
+            .HasOptional<Forests>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Knight>()
+            .HasOptional<Castles>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Warrior>()
+            .HasOptional<Castles>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Archer>()
+            .HasOptional<Castles>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Golem>()
+            .HasOptional<Caves>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Dragon>()
+            .HasOptional<Caves>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Bat>()
+            .HasOptional<Caves>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Mummy>()
+            .HasOptional<Desert>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Scorpion>()
+            .HasOptional<Desert>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Cobra>()
+            .HasOptional<Desert>(s => s.Category)
+            .WithMany()
+            .WillCascadeOnDelete(true);
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace GameManager.Logic
                                                   "Add Caves", "Add Deserts", "Delete Categories",
                                                   "Edit Categories", "Add Elements", "Edit Elements",
                                                   "Delete Elements", "Add Roles", "Edit Roles",
-                                                  "Delete Roles", "Add User", "Delete Users", "Edit Users"};
+                                                  "Delete Roles", "Add Users", "Delete Users", "Edid Users"};
 
         public void fillCheckedList(CheckedListBox list)
         {
@@ -60,7 +60,6 @@ namespace GameManager.Logic
                 initQuery = initQuery.Replace(",WHERE", "WHERE");
             }
 
-            Console.WriteLine(initQuery);
 
             List<string> values = new List<string>();
             foreach(string column in columns)
@@ -73,7 +72,13 @@ namespace GameManager.Logic
             {
                 updateQuery += columns[i] + "='" + values[i] + "' ,";
             }
-            updateQuery += "WHERE Name='" + initName + "'";
+            if (isEdit)
+            {
+                updateQuery += "WHERE Name='" + initName + "'";
+            } else
+            {
+                updateQuery += "WHERE Name='" + name + "'";
+            }
             updateQuery = updateQuery.Replace(",WHERE", "WHERE");
 
 
@@ -121,6 +126,9 @@ namespace GameManager.Logic
                         }
                     } else
                     {
+                        Console.WriteLine(initQuery);
+                        db.Database.ExecuteSqlCommand(initQuery);
+                        db.Database.ExecuteSqlCommand(updateQuery);
                         MessageBox.Show("Role was edited successfully",
                                         "Success",
                                         MessageBoxButtons.OK,
